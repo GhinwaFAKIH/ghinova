@@ -5,7 +5,7 @@
 **AI Training & Intelligent Solutions**
 
 GHINOVA is an AI training and freelance services platform created by
-**Ghinwa Fakih — PhD in Computer Science**.
+**Ghinwa — PhD in Computer Science**.
 
 Whether you want to **learn AI & Python** or need support to **build an AI solution**, GHINOVA provides practical and personalized services.
 
