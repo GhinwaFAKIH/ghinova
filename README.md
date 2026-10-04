@@ -1,2 +1,6 @@
 ### Learn AI & Python • Build AI Solutions • Automate Smarter
-AI &amp; Python services by Ghinwa, PhD in Computer Science — online training, 1-to-1 sessions, and freelance projects in Generative AI, AI Agents, RAG, Knowledge Graphs, Python &amp; automation.
+GhinAIBites offers **online AI & Python training** and **freelance AI development services** by **Ghinwa, PhD in Computer Science**.
+
+🎓 **Training:** Python, Generative AI, Prompt Engineering, AI Agents, n8n, RAG & Knowledge Graphs
+
+💼 **Freelance:** AI/LLM applications, RAG systems, AI Agents & automation, Knowledge Graphs, Python development & AI prototypes.
