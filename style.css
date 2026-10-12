@@ -13,3 +13,13 @@ body{background:linear-gradient(180deg,#fff8f2 0%,#fff 35%,#fff7fb 100%)}
 
 /* GHINOVA FAQ */
 .ghinova-faq{max-width:1100px;margin:0 auto}.faq-items{display:grid;gap:12px;max-width:850px;margin:0 auto}.faq-items details{background:#fff;border:1px solid #e8e5e0;border-radius:16px;padding:18px 22px;box-shadow:0 3px 14px rgba(40,35,72,.04)}.faq-items summary{cursor:pointer;font-weight:750;font-size:16px;line-height:1.5;color:#282348}.faq-items details[open] summary{margin-bottom:12px}.faq-items p{margin:0;color:#625e6e;line-height:1.7;font-size:14px}.faq-items a{color:#a52d70;text-decoration:underline}@media(max-width:600px){.faq-items details{padding:16px}.faq-items summary{font-size:15px}}
+
+/* Personalized training journey */
+.training-steps{max-width:1180px;margin:0 auto}
+.steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.steps-grid article{background:#fff;border:2px solid #282348;border-radius:22px;padding:26px 22px;box-shadow:5px 5px 0 #ffe18c}
+.step-num{display:inline-grid;place-items:center;background:#fce5f0;color:#9f2765;border-radius:12px;padding:9px 12px;font-weight:900;font-size:13px}
+.steps-grid h3{font:700 20px/1.25 'Space Grotesk',sans-serif;margin:19px 0 9px;color:#282348}
+.steps-grid p{font-size:14px;line-height:1.65;color:#625e6e;margin:0}
+@media(max-width:950px){.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.steps-grid{grid-template-columns:1fr}.steps-grid article{padding:21px}}
