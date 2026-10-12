@@ -77,3 +77,15 @@ a.primary:hover,a.secondary:hover,.navcta:hover{transform:translateY(-3px);box-s
 @media(max-width:850px){.preview-feature{grid-template-columns:1fr}.preview-feature-copy{padding:10px 0}.preview-outcome{align-items:flex-start;flex-direction:column}}
 @media(max-width:650px){.course-preview{margin-top:55px}.preview-learning-grid{grid-template-columns:1fr}.lesson-illustration{height:210px}.creative-tiles>span{width:75px;height:83px}.agent-flow{gap:7px}.agent-flow span{width:76px;height:82px}.preview-outcome{padding:22px}.preview-outcome a{white-space:normal;text-align:center;width:100%}}
 @media(prefers-reduced-motion:reduce){.preview-learning-card{transition:none}}
+
+/* Clear Level 2 course previews, existing GHINOVA colors */
+.level-two-grid article{overflow:hidden;padding:0 0 24px}
+.level-two-grid article>i,.level-two-grid article>h3,.level-two-grid article>p,.level-two-grid article>span{margin-left:24px;margin-right:24px}
+.level-two-grid article>i{display:block;margin-top:22px}
+.level2-visual{height:170px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:15px}
+.level2-visual .creative-tiles{gap:7px}.level2-visual .creative-tiles>span{width:70px;height:75px;font-size:25px}
+.level2-visual .task-demo{gap:5px}.level2-visual .task-demo span{font-size:11px;padding:11px 8px}
+.level2-visual .agent-flow{gap:6px}.level2-visual .agent-flow span{width:65px;height:73px;font-size:22px}
+.level2-visual .agent-flow small{font-size:10px}
+.level2-note{margin-top:24px;padding:20px 24px;background:#fff;border:1px solid #e8e5e0;border-radius:18px;color:var(--muted);font-size:14px;line-height:1.7}
+.level2-note strong{color:var(--navy)}
