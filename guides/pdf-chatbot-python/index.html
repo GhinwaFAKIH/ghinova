@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Build a PDF Chatbot in Python Without an API Key | GHINOVA</title>
+  <meta name="description" content="Build a simple PDF chatbot in Python. Extract pages with pypdf, rank passages with TF-IDF, return page citations, and test questions the PDF cannot answer.">
+  <link rel="canonical" href="https://ghinwafakih.github.io/ghinova/guides/pdf-chatbot-python/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="GHINOVA">
+  <meta property="og:title" content="Build a PDF Chatbot in Python Without an API Key">
+  <meta property="og:description" content="A free Python tutorial with page citations and a test for missing evidence.">
+  <meta property="og:url" content="https://ghinwafakih.github.io/ghinova/guides/pdf-chatbot-python/">
+  <meta property="og:image" content="https://ghinwafakih.github.io/ghinova/ghinwa-avatar.png">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .guide { max-width: 780px; margin: 0 auto; padding: 44px 24px 70px; line-height: 1.7; }
+    .guide h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.1; margin: .5em 0; }
+    .guide h2 { line-height: 1.25; margin-top: 1.65em; }
+    .guide a:not(.primary) { color: #27366f; text-underline-offset: 3px; }
+    .guide pre { overflow: auto; padding: 18px; border-radius: 12px; background: #111936; color: #fff; font-size: .9rem; }
+    .guide code { font-family: ui-monospace, monospace; }
+    .guide .next { margin-top: 32px; padding: 22px; background: #f1f4ff; border-radius: 16px; }
+    .guide .next h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="../../"><span>✦</span> GHIN<span>OVA</span></a>
+  <nav aria-label="Main navigation"><a href="../../shop.html">AI courses and workshops</a></nav>
+</header>
+<main class="guide">
+  <article>
+    <p class="eyebrow">FREE PYTHON TUTORIAL</p>
+    <h1>Build a PDF chatbot in Python without an API key</h1>
+    <p>By <a href="../../#instructor">Ginwa Fakih, PhD in Computer Science</a></p>
+    <p>Ask a question about a PDF and get back the passage and page number that support the answer. This tutorial builds the retrieval part of retrieval-augmented generation (RAG). The example returns a direct quote, so you can check the evidence before adding a language model.</p>
+
+    <h2>1. Extract passages and keep their page numbers</h2>
+    <p>Choose a PDF with selectable text and save it as <code>document.pdf</code>. For a quick test, create a two-page PDF in a word processor. Put “Lab visitors must sign in at reception” on the first page and “Safety glasses are required when using the drill press” on the second.</p>
+    <p>Install the packages in your terminal. In a Colab code cell, use <code>%pip</code> in place of <code>python -m pip</code> and upload the PDF to the session.</p>
+    <pre><code>python -m pip install pypdf scikit-learn</code></pre>
+    <p>Run this Python code. Each record pairs an extracted line with its original page number. Line-based splitting keeps the example short and works best on PDFs with simple layouts.</p>
+    <pre><code>from pypdf import PdfReader
+
+passages = []
+for page_number, page in enumerate(PdfReader("document.pdf").pages, start=1):
+    for line in (page.extract_text() or "").splitlines():
+        line = line.strip()
+        if line:
+            passages.append((page_number, line))
+
+if not passages:
+    raise ValueError("No selectable text found. Try a PDF with a text layer.")</code></pre>
+
+    <h2>2. Rank passages and cite the best match</h2>
+    <p>TF-IDF gives more weight to words that help distinguish one passage from another. Cosine similarity then scores how closely a question matches each passage. Start with a score cutoff of 0.2 and adjust it using sample questions from your own document.</p>
+    <pre><code>from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+vectorizer = TfidfVectorizer(stop_words="english")
+passage_vectors = vectorizer.fit_transform(text for _, text in passages)
+
+def ask_pdf(question, min_score=0.2):
+    query = vectorizer.transform([question])
+    scores = cosine_similarity(query, passage_vectors)[0]
+    best = scores.argmax()
+    if scores[best] &lt; min_score:
+        return "I couldn't find enough evidence in this PDF."
+    page_number, evidence = passages[best]
+    return f'"{evidence}" (PDF page {page_number})'
+
+print(ask_pdf("Are safety glasses required at the drill press?"))
+print(ask_pdf("What is the Wi-Fi password?"))</code></pre>
+
+    <h2>3. Test questions the PDF can and cannot answer</h2>
+    <p>For the two-page example, the first question should return the drill-press rule and cite page 2. The second should return the insufficient-evidence message. Now try asking for the price of safety glasses. It may retrieve the same rule because the terms overlap. Open the cited page and check whether the passage actually answers the question. A similarity score measures overlap and cannot establish that the answer is supported.</p>
+    <p>If a scanned PDF yields no text, run optical character recognition first. If a sentence wraps across multiple lines, try grouping nearby lines while retaining their page numbers.</p>
+
+    <section class="next">
+      <h2>Practice with a ready-to-run notebook</h2>
+      <p>The €5 PDF chatbot workshop includes a guided Colab notebook, a sample PDF and a workbook with exercises. You can also try the free retrieval evaluation lab from the digital shop.</p>
+      <p><a href="../../shop.html#pdf-chatbot">Preview the PDF chatbot workshop →</a></p>
+      <p><a href="../../shop.html#intermediate-title">Find the free retrieval evaluation lab →</a></p>
+    </section>
+  </article>
+</main>
+<footer><a class="brand" href="../../"><span>✦</span> GHIN<span>OVA</span></a><p>© 2026 Ginwa Fakih</p></footer>
+</body>
+</html>
