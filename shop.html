@@ -1,6 +1,11 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Shop | GHINOVA Academy</title><meta name="description" content="Build a PDF chatbot in Google Colab with GHINOVA’s €5 workshop. Includes a runnable Python notebook, sample PDF and guided workbook."><link rel="stylesheet" href="style.css"><style>
-.shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}.shop-label{font-weight:800;color:#6553c9;letter-spacing:.14em;font-size:.78rem}.shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px}.shop-item{border:1px solid #dfe5f2;border-radius:22px;overflow:hidden;background:white;box-shadow:0 12px 32px #152a4810;display:flex;flex-direction:column}.shop-art{min-height:155px;background:linear-gradient(125deg,#192a55,#6757b5);color:white;padding:25px;display:flex;flex-direction:column;justify-content:space-between}.shop-art span{font-size:2rem}.shop-art strong{font-size:1.45rem}.shop-details{padding:25px;display:flex;flex-direction:column;flex:1}.shop-details p{color:#526079;line-height:1.6}.shop-details ul{padding-left:20px;color:#33415e;line-height:1.8;flex:1}.shop-price{font-size:1.7rem;font-weight:800;margin:14px 0}.shop-action{display:inline-block;text-align:center;background:#27366f;color:white!important;text-decoration:none;padding:13px;border-radius:12px;font-weight:700}.shop-note{font-size:.85rem;color:#68738b;margin-top:10px}.shop-info{background:#f1f4ff;border-radius:18px;padding:26px;margin-top:45px;line-height:1.7}.shop-back{display:inline-block;margin:20px 0;color:#27366f;font-weight:700;text-decoration:none}body{background:#fafbff}
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Shop | GHINOVA Academy</title><meta name="description" content="Shop GHINOVA’s beginner, intermediate and advanced AI resources. Explore courses, a PDF chatbot workshop and five runnable Python labs."><link rel="stylesheet" href="style.css"><style>
+.shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}.shop-label{font-weight:800;color:#5745b3;letter-spacing:.12em;font-size:.78rem}
+.shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}
+.shop-action{display:inline-block;text-align:center;background:#27366f;color:white!important;text-decoration:none;padding:13px;border-radius:12px;font-weight:700}
+.shop-info{background:#f1f4ff;border-radius:18px;padding:26px;line-height:1.7}
+.shop-back{display:inline-block;margin:20px 0;color:#27366f;font-weight:700;text-decoration:none}
+body{background:#fafbff}
 
 .workshop {
   display: grid;
@@ -15,7 +20,7 @@
   background: #fff;
   box-shadow: 0 12px 32px #152a4810;
 }
-.workshop h1 {
+.workshop h2 {
   margin: 10px 0 14px;
   font-size: clamp(2.1rem, 5vw, 3.8rem);
   line-height: 1.05;
@@ -33,7 +38,7 @@
   color: #fff;
 }
 .workshop-demo .shop-label { color: #cbc3ff; }
-.workshop-demo h2 { margin: 8px 0 12px; font-size: 1.4rem; color: inherit; }
+.workshop-demo h3 { margin: 8px 0 12px; font-size: 1.4rem; color: inherit; }
 .workshop-demo details { padding: 12px 0; border-top: 1px solid #8190b0; }
 .workshop-demo summary { cursor: pointer; font-weight: 700; line-height: 1.5; }
 .workshop-demo blockquote { margin: 10px 0 6px; line-height: 1.6; }
@@ -46,15 +51,103 @@
 .workshop-includes { margin: 0 0 42px; }
 .workshop-includes h2 { margin: 0 0 10px; }
 .workshop-includes ul { padding-left: 22px; line-height: 1.75; }
-.shop-upcoming { margin: 50px 0 18px; }
+.catalog { margin-bottom: 48px; }
+.catalog-intro { max-width: 690px; margin: 4px 0 26px; }
+.catalog-intro h1 { margin: 10px 0; font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.05; }
+.catalog-intro p, .tier-product p { color: #526079; line-height: 1.55; }
+.catalog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.tier-card { min-width: 0; overflow: hidden; border: 1px solid #dfe5f2; border-radius: 20px; background: #fff; }
+.tier-head { padding: 22px; color: #fff; background: #252e68; }
+.tier-card:nth-child(2) .tier-head { background: #1a5062; }
+.tier-card:nth-child(3) .tier-head { background: #503762; }
+.tier-head h2 { margin: 5px 0 6px; color: inherit; }
+.tier-head p { margin: 0; color: #f2f1ff; font-size: .91rem; }
+.tier-products { margin: 0; padding: 0 18px; list-style: none; }
+.tier-product { padding: 16px 0; }
+.tier-product + .tier-product { border-top: 1px solid #e4e8f3; }
+.tier-product h3 { margin: 4px 0; font-size: 1.05rem; }
+.tier-product p { margin: 5px 0 10px; font-size: .92rem; }
+.tier-product a { color: #40358e; font-weight: 700; }
+.resource-kind { color: #5745b3; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.tier-product a:focus-visible { outline: 3px solid #8170eb; outline-offset: 4px; }
+@media (max-width: 900px) {
+  .catalog-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 760px) {
   .workshop { grid-template-columns: 1fr; }
 }
 </style></head><body><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html">Digital Shop</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
-<main class="shop-wrap"><a class="shop-back" href="index.html">← Back to GHINOVA</a><section class="workshop" id="pdf-chatbot" aria-labelledby="workshop-title">
+<main class="shop-wrap"><a class="shop-back" href="index.html">← Back to GHINOVA</a><section class="catalog" aria-labelledby="shop-title">
+  <div class="catalog-intro">
+    <span class="shop-label">GHINOVA ACADEMY · DIGITAL SHOP</span>
+    <h1 id="shop-title">Learn AI by building.</h1>
+    <p>Choose your level, then pick a course or download a hands-on Python lab. Each free notebook includes a worked example, a challenge, and a reference solution.</p>
+  </div>
+  <div class="catalog-grid">
+    <article class="tier-card" aria-labelledby="beginner-title">
+      <div class="tier-head"><small>LEVEL 01</small><h2 id="beginner-title">Beginner</h2><p>Build your foundations in AI, NLP, and Python.</p></div>
+      <ul class="tier-products">
+        <li class="tier-product">
+          <span class="resource-kind">€59 · One-time course</span>
+          <h3>AI &amp; NLP Fundamentals</h3>
+          <p>Five slide lessons and a Colab lab on how language models predict tokens.</p>
+          <a href="https://whop.com/checkout/plan_aGF90zfZKraHK/">Buy Fundamentals on Whop →</a>
+        </li>
+        <li class="tier-product">
+          <span class="resource-kind">€5 · One-time workshop</span>
+          <h3>Build Your First AI PDF Chatbot</h3>
+          <p>Ask questions about a PDF and trace the answer back to its source.</p>
+          <a href="#pdf-chatbot">Preview the PDF Chatbot Workshop →</a>
+        </li>
+        <li class="tier-product">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Text Preprocessing Lab</h3>
+          <p>Turn raw text into tokens and compare the vocabulary of two documents.</p>
+          <a href="course-labs/shop/text-preprocessing-lab.ipynb" download>Download Text Preprocessing →</a>
+        </li>
+      </ul>
+    </article>
+    <article class="tier-card" aria-labelledby="intermediate-title">
+      <div class="tier-head"><small>LEVEL 02</small><h2 id="intermediate-title">Intermediate</h2><p>Measure retrieval quality and design prompts with citations.</p></div>
+      <ul class="tier-products">
+        <li class="tier-product">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Retrieval Evaluation Lab</h3>
+          <p>Compare ranked results with hit rate and mean reciprocal rank.</p>
+          <a href="course-labs/shop/retrieval-evaluation-lab.ipynb" download>Download Retrieval Evaluation →</a>
+        </li>
+        <li class="tier-product">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>RAG Evidence Prompt Lab</h3>
+          <p>Build a prompt from labeled passages and check sample answers for invented citation IDs.</p>
+          <a href="course-labs/shop/rag-evidence-prompt-lab.ipynb" download>Download RAG Evidence Prompt →</a>
+        </li>
+      </ul>
+    </article>
+    <article class="tier-card" aria-labelledby="advanced-title">
+      <div class="tier-head"><small>LEVEL 03</small><h2 id="advanced-title">Advanced</h2><p>Retrieve evidence across graph relationships and apply rules.</p></div>
+      <ul class="tier-products">
+        <li class="tier-product">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Graph Retrieval Lab</h3>
+          <p>Traverse a two-hop knowledge graph query and return the evidence path.</p>
+          <a href="course-labs/shop/graph-retrieval-lab.ipynb" download>Download Graph Retrieval →</a>
+        </li>
+        <li class="tier-product">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Knowledge Graph Rules Lab</h3>
+          <p>Apply a rule to graph facts and track the sources behind each result.</p>
+          <a href="course-labs/shop/knowledge-graph-rules-lab.ipynb" download>Download Knowledge Graph Rules →</a>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>
+<section class="workshop" id="pdf-chatbot" aria-labelledby="workshop-title">
   <div>
     <span class="shop-label">GHINOVA ACADEMY · HANDS-ON WORKSHOP</span>
-    <h1 id="workshop-title">Build Your First AI PDF Chatbot</h1>
+    <h2 id="workshop-title">Build Your First AI PDF Chatbot</h2>
     <p class="workshop-intro">Use a Google Colab notebook to ask questions about a PDF, find the passage behind an answer, and see what happens when the document has no evidence.</p>
     <p><strong>Basic Python</strong> · Self-paced · No API key</p>
     <div class="workshop-price"><strong>€5</strong><span>One-time launch price</span></div>
@@ -63,7 +156,7 @@
   </div>
   <div class="workshop-demo" aria-labelledby="preview-title">
     <span class="shop-label">FREE PREVIEW · SAMPLE PDF</span>
-    <h2 id="preview-title">See how the chatbot responds</h2>
+    <h3 id="preview-title">See how the chatbot responds</h3>
     <details open>
       <summary>Are safety glasses required when using the drill press?</summary>
       <blockquote>“Safety glasses are required while using the drill press.”</blockquote>
@@ -85,9 +178,4 @@
   <p>After checkout, open the workshop in Whop, go to <strong>Set up and run the notebook</strong>, and download the three files under <strong>File attachments</strong>.</p>
   <p>Need help accessing the workshop? <a href="index.html#contact">Contact GHINOVA</a>.</p>
 </section>
-<h2 class="shop-upcoming" id="upcoming-title">Coming next from GHINOVA Academy</h2>
-<section class="shop-grid" aria-labelledby="upcoming-title">
-<article class="shop-item"><div class="shop-art"><span>✨</span><strong>AI for Beginners</strong><small>LEVEL 1 · COURSE</small></div><div class="shop-details"><h2>AI & NLP Fundamentals</h2><p>Understand AI, machine learning, text preprocessing, TF-IDF and the foundations of language models.</p><ul><li>Five structured modules</li><li>Guided Python practice</li><li>Downloadable lesson resources planned</li></ul><div class="shop-price">€59 <small style="font-size:.8rem;font-weight:400">planned price</small></div><a class="shop-action" href="index.html#course-waitlist">Join the interest list</a><span class="shop-note">Coming soon · Not available for purchase</span></div></article>
-<article class="shop-item"><div class="shop-art" style="background:linear-gradient(125deg,#153b4d,#278b9e)"><span>🧠</span><strong>LLMs, RAG & GraphRAG</strong><small>LEVEL 2 · COURSE</small></div><div class="shop-details"><h2>Build Modern AI Systems</h2><p>Progress from language models to retrieval-augmented generation and knowledge graph approaches.</p><ul><li>LLM fundamentals</li><li>RAG architecture</li><li>Knowledge graphs and GraphRAG</li></ul><div class="shop-price">Coming soon</div><a class="shop-action" href="index.html#contact">Request course updates</a><span class="shop-note">Course content and pricing in preparation</span></div></article>
-<article class="shop-item"><div class="shop-art" style="background:linear-gradient(125deg,#553b73,#ae6a9e)"><span>📘</span><strong>Practical AI Guides</strong><small>DOWNLOADABLE PDF COLLECTION</small></div><div class="shop-details"><h2>AI & Python Workbooks</h2><p>Short guides, exercises and reusable templates to help you practice AI and Python at your own pace.</p><ul><li>Beginner-friendly explanations</li><li>Practical exercises</li><li>Downloadable PDF format planned</li></ul><div class="shop-price">Coming soon</div><a class="shop-action" href="index.html#contact">Get notified</a><span class="shop-note">PDF products are being prepared</span></div></article>
-</section></main><footer><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><p>Learn · Build · Innovate</p><p>© 2026 Ghinwa</p></footer></body></html>
+</main><footer><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><p>Learn · Build · Innovate</p><p>© 2026 Ghinwa</p></footer></body></html>
