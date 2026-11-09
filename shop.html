@@ -80,8 +80,256 @@ body{background:#fafbff}
 @media (max-width: 760px) {
   .workshop { grid-template-columns: 1fr; }
 }
-</style></head><body><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html">Digital Shop</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
-<main class="shop-wrap"><a class="shop-back" href="index.html">← Back to GHINOVA</a><section class="catalog-intro" aria-labelledby="shop-title">
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ghinwafakih.github.io/ghinova/#academy",
+      "name": "GHINOVA Academy",
+      "url": "https://ghinwafakih.github.io/ghinova/",
+      "description": "Online Python and AI training, courses, and workshops."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ghinwafakih.github.io/ghinova/#website",
+      "name": "GHINOVA",
+      "url": "https://ghinwafakih.github.io/ghinova/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#webpage",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html",
+      "name": "Digital Shop",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#website"
+      },
+      "mainEntity": {
+        "@id": "https://ghinwafakih.github.io/ghinova/shop.html#catalog"
+      },
+      "breadcrumb": {
+        "@id": "https://ghinwafakih.github.io/ghinova/shop.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "GHINOVA",
+          "item": "https://ghinwafakih.github.io/ghinova/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Digital Shop",
+          "item": "https://ghinwafakih.github.io/ghinova/shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#catalog",
+      "name": "GHINOVA courses, workshops, and free labs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#ai-nlp-fundamentals"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#text-preprocessing-lab"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#pdf-chatbot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#retrieval-evaluation-lab"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#rag-retrieval-workshop"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#graph-retrieval-lab"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@id": "https://ghinwafakih.github.io/ghinova/shop.html#graph-retrieval-workshop"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#ai-nlp-fundamentals",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#ai-nlp-fundamentals",
+      "name": "AI & NLP Fundamentals",
+      "description": "Build a foundation in AI and natural language processing, from preparing text to understanding how language models predict the next token.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Beginner",
+      "isAccessibleForFree": false,
+      "offers": {
+        "@type": "Offer",
+        "url": "https://whop.com/checkout/plan_aGF90zfZKraHK/",
+        "price": 59,
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#text-preprocessing-lab",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#text-preprocessing-lab",
+      "name": "Text Preprocessing Lab",
+      "description": "Turn raw text into tokens and compare the vocabulary of two documents.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Beginner",
+      "isAccessibleForFree": true,
+      "learningResourceType": "Notebook",
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ghinwafakih.github.io/ghinova/course-labs/shop/text-preprocessing-lab.ipynb"
+      }
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#pdf-chatbot",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#pdf-chatbot",
+      "name": "Build Your First AI PDF Chatbot",
+      "description": "Use a Google Colab notebook to ask questions about a PDF, find the passage behind an answer, and see what happens when the document has no evidence.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Beginner",
+      "isAccessibleForFree": false,
+      "learningResourceType": "Workshop",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://whop.com/checkout/plan_i04JuHuS1Rps2/",
+        "price": 5,
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#retrieval-evaluation-lab",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#retrieval-evaluation-lab",
+      "name": "Retrieval Evaluation Lab",
+      "description": "Compare ranked results with hit rate and mean reciprocal rank.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Intermediate",
+      "isAccessibleForFree": true,
+      "learningResourceType": "Notebook",
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ghinwafakih.github.io/ghinova/course-labs/shop/retrieval-evaluation-lab.ipynb"
+      }
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#rag-retrieval-workshop",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#rag-retrieval-workshop",
+      "name": "RAG Retrieval & Evidence Workshop",
+      "description": "Build and benchmark two rankers, test when to decline an answer, and check citations against retrieved sources.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Intermediate",
+      "isAccessibleForFree": false,
+      "learningResourceType": "Workshop",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://whop.com/checkout/plan_P0wG9ytLEGde9/",
+        "price": 9,
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#graph-retrieval-lab",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#graph-retrieval-lab",
+      "name": "Graph Retrieval Lab",
+      "description": "Traverse a two-hop knowledge graph query and return the evidence path.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Advanced",
+      "isAccessibleForFree": true,
+      "learningResourceType": "Notebook",
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://ghinwafakih.github.io/ghinova/course-labs/shop/graph-retrieval-lab.ipynb"
+      }
+    },
+    {
+      "@type": "LearningResource",
+      "@id": "https://ghinwafakih.github.io/ghinova/shop.html#graph-retrieval-workshop",
+      "url": "https://ghinwafakih.github.io/ghinova/shop.html#graph-retrieval-workshop",
+      "name": "Graph Retrieval & Rules Workshop",
+      "description": "Trace multi-hop evidence, resolve conflicting sources, and apply a rule with auditable premises.",
+      "provider": {
+        "@id": "https://ghinwafakih.github.io/ghinova/#academy"
+      },
+      "inLanguage": "en",
+      "educationalLevel": "Advanced",
+      "isAccessibleForFree": false,
+      "learningResourceType": "Workshop",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://whop.com/checkout/plan_Dol5IjiDm4szw/",
+        "price": 15,
+        "priceCurrency": "EUR"
+      }
+    }
+  ]
+}
+</script>
+</head><body><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html">Digital Shop</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
+<main class="shop-wrap"><p><a class="shop-back" href="./">GHINOVA</a> / <span>Digital Shop</span></p><section class="catalog-intro" aria-labelledby="shop-title">
     <span class="shop-label">GHINOVA ACADEMY · DIGITAL SHOP</span>
     <h1 id="shop-title">Learn AI by building.</h1>
   <p>Explore the full AI &amp; NLP course or choose a shorter workshop at your level. Every free lab includes a worked example, a challenge, and a reference solution.</p>
@@ -115,7 +363,7 @@ body{background:#fafbff}
     <article class="tier-card" aria-labelledby="beginner-title">
       <div class="tier-head"><small>LEVEL 01</small><h2 id="beginner-title">Beginner</h2><p>Build your foundations in AI, NLP, and Python.</p></div>
       <ul class="tier-products">
-        <li class="tier-product">
+        <li class="tier-product" id="text-preprocessing-lab">
           <span class="resource-kind">Free · Python notebook</span>
           <h3>Text Preprocessing Lab</h3>
           <p>Turn raw text into tokens and compare the vocabulary of two documents.</p>
@@ -134,14 +382,14 @@ body{background:#fafbff}
     <article class="tier-card" aria-labelledby="intermediate-title">
       <div class="tier-head"><small>LEVEL 02</small><h2 id="intermediate-title">Intermediate</h2><p>Measure retrieval quality and design prompts with citations.</p></div>
       <ul class="tier-products">
-        <li class="tier-product">
+        <li class="tier-product" id="retrieval-evaluation-lab">
           <span class="resource-kind">Free · Python notebook</span>
           <h3>Retrieval Evaluation Lab</h3>
           <p>Compare ranked results with hit rate and mean reciprocal rank.</p>
           <a href="course-labs/shop/retrieval-evaluation-lab.ipynb" download>Download Retrieval Evaluation →</a>
           <p><a href="guides/evaluate-rag-chatbot-python/">Read the free RAG evaluation tutorial</a></p>
         </li>
-        <li class="tier-product">
+        <li class="tier-product" id="rag-retrieval-workshop">
           <span class="resource-kind">€9 · One-time workshop</span>
           <h3>RAG Retrieval &amp; Evidence Workshop</h3>
           <p>Build and benchmark two rankers, test when to decline an answer, and check citations against retrieved sources.</p>
@@ -152,13 +400,13 @@ body{background:#fafbff}
     <article class="tier-card" aria-labelledby="advanced-title">
       <div class="tier-head"><small>LEVEL 03</small><h2 id="advanced-title">Advanced</h2><p>Retrieve evidence across graph relationships and apply rules.</p></div>
       <ul class="tier-products">
-        <li class="tier-product">
+        <li class="tier-product" id="graph-retrieval-lab">
           <span class="resource-kind">Free · Python notebook</span>
           <h3>Graph Retrieval Lab</h3>
           <p>Traverse a two-hop knowledge graph query and return the evidence path.</p>
           <a href="course-labs/shop/graph-retrieval-lab.ipynb" download>Download Graph Retrieval →</a>
         </li>
-        <li class="tier-product">
+        <li class="tier-product" id="graph-retrieval-workshop">
           <span class="resource-kind">€15 · One-time workshop</span>
           <h3>Graph Retrieval &amp; Rules Workshop</h3>
           <p>Trace multi-hop evidence, resolve conflicting sources, and apply a rule with auditable premises.</p>
