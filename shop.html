@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Shop | GHINOVA Academy</title><meta name="description" content="Shop GHINOVA’s beginner, intermediate and advanced AI resources. Compare one free Python lab and one paid workshop at each level."><link rel="stylesheet" href="style.css"><style>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Shop | GHINOVA Academy</title><meta name="description" content="Shop GHINOVA’s beginner, intermediate and advanced AI resources. Explore the full AI &amp; NLP Fundamentals course, plus one free lab and one paid workshop at each level."><link rel="stylesheet" href="style.css"><style>
 .shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}.shop-label{font-weight:800;color:#5745b3;letter-spacing:.12em;font-size:.78rem}
 .shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}
 .shop-action{display:inline-block;text-align:center;background:#27366f;color:white!important;text-decoration:none;padding:13px;border-radius:12px;font-weight:700}
@@ -51,7 +51,10 @@ body{background:#fafbff}
 .workshop-includes { margin: 0 0 42px; }
 .workshop-includes h2 { margin: 0 0 10px; }
 .workshop-includes ul { padding-left: 22px; line-height: 1.75; }
+.featured-course { margin-bottom: 46px; border-color: #c9c2ef; }
+.featured-course ol { margin: 12px 0 0; padding-left: 22px; line-height: 1.8; }
 .catalog { margin-bottom: 48px; }
+.catalog-title { margin: 0 0 16px; }
 .catalog-intro { max-width: 690px; margin: 4px 0 26px; }
 .catalog-intro h1 { margin: 10px 0; font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.05; }
 .catalog-intro p, .tier-product p { color: #526079; line-height: 1.55; }
@@ -78,12 +81,36 @@ body{background:#fafbff}
   .workshop { grid-template-columns: 1fr; }
 }
 </style></head><body><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html">Digital Shop</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
-<main class="shop-wrap"><a class="shop-back" href="index.html">← Back to GHINOVA</a><section class="catalog" aria-labelledby="shop-title">
-  <div class="catalog-intro">
+<main class="shop-wrap"><a class="shop-back" href="index.html">← Back to GHINOVA</a><section class="catalog-intro" aria-labelledby="shop-title">
     <span class="shop-label">GHINOVA ACADEMY · DIGITAL SHOP</span>
     <h1 id="shop-title">Learn AI by building.</h1>
-    <p>Choose your level. Start with a free Python lab, or buy the full course or workshop through Whop. Every free lab includes a worked example, a challenge, and a reference solution.</p>
+  <p>Explore the full AI &amp; NLP course or choose a shorter workshop at your level. Every free lab includes a worked example, a challenge, and a reference solution.</p>
+</section>
+<section class="workshop featured-course" id="ai-nlp-fundamentals" aria-labelledby="fundamentals-title">
+  <div>
+    <span class="shop-label">GHINOVA ACADEMY · FULL COURSE</span>
+    <h2 id="fundamentals-title">AI &amp; NLP Fundamentals</h2>
+    <p class="workshop-intro">Build a foundation in AI and natural language processing, from preparing text to understanding how language models predict the next token.</p>
+    <p><strong>Beginner level</strong> · Self-paced · Five downloadable slide lessons and a guided Colab lab</p>
+    <div class="workshop-price"><strong>€59</strong><span>One-time course price</span></div>
+    <a class="shop-action" href="https://whop.com/checkout/plan_aGF90zfZKraHK/">Buy Fundamentals on Whop →</a>
+    <p class="workshop-note">Whop handles payment and course access. Any applicable tax is shown at checkout.</p>
   </div>
+  <div class="workshop-demo">
+    <span class="shop-label">COURSE OUTLINE</span>
+    <h3>Five lessons from AI to language models</h3>
+    <ol>
+      <li>Introduction to AI</li>
+      <li>Introduction to natural language processing</li>
+      <li>Text preprocessing with Python</li>
+      <li>Text representation, including TF-IDF and embeddings</li>
+      <li>Language models and next-token prediction</li>
+    </ol>
+    <p>Practice next-token prediction in the included Colab lab.</p>
+  </div>
+</section>
+<section class="catalog" aria-labelledby="labs-title">
+  <h2 class="catalog-title" id="labs-title">Short workshops and free labs</h2>
   <div class="catalog-grid">
     <article class="tier-card" aria-labelledby="beginner-title">
       <div class="tier-head"><small>LEVEL 01</small><h2 id="beginner-title">Beginner</h2><p>Build your foundations in AI, NLP, and Python.</p></div>
@@ -95,10 +122,11 @@ body{background:#fafbff}
           <a href="course-labs/shop/text-preprocessing-lab.ipynb" download>Download Text Preprocessing →</a>
         </li>
         <li class="tier-product">
-          <span class="resource-kind">€59 · One-time course</span>
-          <h3>AI &amp; NLP Fundamentals</h3>
-          <p>Five slide lessons and a Colab lab on how language models predict tokens.</p>
-          <a href="https://whop.com/checkout/plan_aGF90zfZKraHK/">Buy Fundamentals on Whop →</a>
+          <span class="resource-kind">€5 · One-time workshop</span>
+          <h3>Build Your First AI PDF Chatbot</h3>
+          <p>Ask questions about a PDF and trace the answer back to its source.</p>
+          <a href="https://whop.com/checkout/plan_i04JuHuS1Rps2/">Buy PDF Chatbot Workshop on Whop →</a>
+          <p><a href="#pdf-chatbot">See the workshop preview</a></p>
         </li>
       </ul>
     </article>
