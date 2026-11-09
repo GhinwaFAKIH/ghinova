@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How to Evaluate a RAG Chatbot in Python | GHINOVA</title>
+  <meta name="description" content="Measure RAG retrieval with Hit@k and MRR, test when your chatbot should abstain, and check whether citations support its answers.">
+  <link rel="canonical" href="https://ghinwafakih.github.io/ghinova/guides/evaluate-rag-chatbot-python/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="GHINOVA">
+  <meta property="og:title" content="How to Evaluate a RAG Chatbot in Python">
+  <meta property="og:description" content="Measure RAG retrieval with Hit@k and MRR, test when your chatbot should abstain, and check whether citations support its answers.">
+  <meta property="og:url" content="https://ghinwafakih.github.io/ghinova/guides/evaluate-rag-chatbot-python/">
+  <meta property="og:image" content="https://ghinwafakih.github.io/ghinova/ghinwa-avatar.png">
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .guide { max-width: 780px; margin: 0 auto; padding: 44px 24px 70px; line-height: 1.7; }
+    .guide h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.1; margin: .5em 0; }
+    .guide h2 { line-height: 1.25; margin-top: 1.65em; }
+    .guide a:not(.primary) { color: #27366f; text-underline-offset: 3px; }
+    .guide pre { overflow: auto; padding: 18px; border-radius: 12px; background: #111936; color: #fff; font-size: .9rem; }
+    .guide code { font-family: ui-monospace, monospace; }
+    .guide .next { margin-top: 32px; padding: 22px; background: #f1f4ff; border-radius: 16px; }
+    .guide .next h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="../../"><span>✦</span> GHIN<span>OVA</span></a>
+  <nav aria-label="Main navigation"><a href="../../shop.html">AI courses and workshops</a></nav>
+</header>
+<main class="guide">
+  <article>
+    <p class="eyebrow">FREE PYTHON TUTORIAL</p>
+    <h1>How to evaluate a RAG chatbot in Python</h1>
+    <p>By <a href="../../#instructor">Ginwa Fakih, PhD in Computer Science</a></p>
+    <p>When a document chatbot gives a bad answer, two things can go wrong. The retriever can miss the supporting passage, or the chatbot can misuse the passage it found. This Python exercise measures the two stages separately. It runs with Python 3.10 or later and uses a small, fixed dataset.</p>
+
+    <h2>1. Build a labeled set of questions</h2>
+    <p>For each question, record the passages that can support a correct answer. The examples below use a fictional lab handbook. Passage <code>p1</code> says visitors sign in at reception. Passage <code>p2</code> requires eye protection at the drill press. Passage <code>p3</code> lists opening hours. Passage <code>p4</code> says the lab supervisor trains new volunteers. The handbook contains no Wi-Fi password.</p>
+    <p>Keep a mix of answerable and unanswerable questions. Give each passage a stable ID. When you test your own chatbot, replace the sample <code>ranked</code> lists with the passage IDs returned by your retriever, in order.</p>
+
+    <h2>2. Score retrieval with Hit@k and MRR</h2>
+    <p>Hit@k counts how often at least one supporting passage appears in the first <em>k</em> results. Mean reciprocal rank (MRR@k) also rewards placing that passage higher. A match at rank 1 scores 1, a match at rank 2 scores 0.5, and a miss scores 0. Compute both over answerable questions.</p>
+    <pre><code>cases = [
+    {&quot;question&quot;: &quot;Where do visitors sign in?&quot;, &quot;gold&quot;: {&quot;p1&quot;}, &quot;ranked&quot;: [&quot;p3&quot;, &quot;p1&quot;]},
+    {&quot;question&quot;: &quot;Is eye protection required?&quot;, &quot;gold&quot;: {&quot;p2&quot;}, &quot;ranked&quot;: [&quot;p2&quot;, &quot;p3&quot;]},
+    {&quot;question&quot;: &quot;Who trains new volunteers?&quot;, &quot;gold&quot;: {&quot;p4&quot;}, &quot;ranked&quot;: [&quot;p3&quot;, &quot;p2&quot;]},
+    {&quot;question&quot;: &quot;What is the Wi-Fi password?&quot;, &quot;gold&quot;: set(), &quot;ranked&quot;: [&quot;p3&quot;, &quot;p1&quot;]},
+]
+
+def first_hit(ranked, gold, k):
+    return next((rank for rank, pid in enumerate(ranked[:k], 1) if pid in gold), None)
+
+for k in (1, 2):
+    ranks = [first_hit(c[&quot;ranked&quot;], c[&quot;gold&quot;], k) for c in cases if c[&quot;gold&quot;]]
+    hit_rate = sum(rank is not None for rank in ranks) / len(ranks)
+    mrr = sum(1 / rank for rank in ranks if rank is not None) / len(ranks)
+    print(f&quot;Hit@{k}={hit_rate:.2f}  MRR@{k}={mrr:.2f}&quot;)</code></pre>
+    <p>Expected output is <code>Hit@1=0.33</code>, <code>MRR@1=0.33</code>, <code>Hit@2=0.67</code> and <code>MRR@2=0.50</code>. Expanding from one result to two recovers the sign-in passage. The volunteer training question still misses because <code>p4</code> never appears.</p>
+
+    <h2>3. Review evidence and abstentions</h2>
+    <p>For each response, record whether the chatbot declined to answer, which passage it cited and whether that passage supports the claim. Mark support by reading the answer alongside its citation. In this example the answer about eye protection cites the opening hours, even though the retriever ranked the correct passage first.</p>
+    <pre><code>replies = [
+    {&quot;abstained&quot;: False, &quot;citation&quot;: &quot;p1&quot;, &quot;supported&quot;: True},
+    {&quot;abstained&quot;: False, &quot;citation&quot;: &quot;p3&quot;, &quot;supported&quot;: False},
+    {&quot;abstained&quot;: True, &quot;citation&quot;: None, &quot;supported&quot;: False},
+    {&quot;abstained&quot;: True, &quot;citation&quot;: None, &quot;supported&quot;: False},
+]
+
+paired = list(zip(cases, replies, strict=True))
+answered = [(case, reply) for case, reply in paired if not reply[&quot;abstained&quot;]]
+valid = sum(
+    reply[&quot;citation&quot;] in case[&quot;ranked&quot;]
+    and reply[&quot;citation&quot;] in case[&quot;gold&quot;]
+    and reply[&quot;supported&quot;]
+    for case, reply in answered
+)
+unanswerable = [reply for case, reply in paired if not case[&quot;gold&quot;]]
+print(f&quot;Evidence-backed answers: {valid}/{len(answered)}&quot;)
+print(f&quot;Correct abstentions: {sum(r[&#x27;abstained&#x27;] for r in unanswerable)}/{len(unanswerable)}&quot;)</code></pre>
+    <p>The example produces one evidence-backed answer out of two attempts and correctly abstains on the one unanswerable question. It also abstains on an answerable question after missing the source. Report that missed answer separately when you compare systems. For responses with multiple factual claims, check the evidence for each claim.</p>
+
+    <h2>4. Compare changes on the same questions</h2>
+    <p>Try changing chunk size or the retriever, then rerun the same questions. Keep a separate test set for your final comparison if you tune on the examples. Review cases where higher Hit@k did not improve answers and cases where a threshold rejected questions that had evidence.</p>
+    <section class="next">
+      <h2>Try the lab with a working notebook</h2>
+      <p><a href="../../course-labs/shop/retrieval-evaluation-lab.ipynb" download>Download the free Retrieval Evaluation Lab →</a></p>
+      <p><a href="../../shop.html#intermediate-title">Explore the €9 RAG Retrieval &amp; Evidence workshop →</a></p>
+      <p><a href="../pdf-chatbot-python/">Start with the free Python PDF chatbot tutorial →</a></p>
+    </section>
+  </article>
+</main>
+<footer><a class="brand" href="../../"><span>✦</span> GHIN<span>OVA</span></a><p>© 2026 Ginwa Fakih</p></footer>
+</body>
+</html>
