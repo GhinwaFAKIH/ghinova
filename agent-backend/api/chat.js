@@ -32,11 +32,11 @@ export default async function handler(req,res){
  const limit=limits.get(ip)||{count:0,until:now+60000};
  if(limit.count>=8){res.setHeader('Retry-After','60');return res.status(429).json({error:'Please wait a minute before sending another message.'});}
  limit.count++;limits.set(ip,limit);
- const token=process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN;
+ const token=process.env.AI_GATEWAY_API_KEY||(process.env.VERCEL ? req.headers['x-vercel-oidc-token'] : undefined)||process.env.VERCEL_OIDC_TOKEN;
  if(!token)return res.status(503).json({error:'The AI connection is unavailable. Please use the contact form.'});
  try{
   const response=await fetch('https://ai-gateway.vercel.sh/v1/chat/completions',{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({model:process.env.AI_GATEWAY_MODEL||'google/gemini-2.5-flash-lite',messages:[{role:'system',content:system},...messages],tools:[tool],tool_choice:'auto',max_tokens:650,temperature:0.3}),signal:AbortSignal.timeout(35000)});
-  if(!response.ok){console.error('Gateway status',response.status);return res.status(503).json({error:'The AI assistant is temporarily unavailable. Please try again later or use the contact form.'});}
+  if(!response.ok){const detail=await response.json().catch(()=>({}));console.error('Gateway status',response.status,JSON.stringify({code:detail.error?.code,message:String(detail.error?.message||'').slice(0,500)}));return res.status(503).json({error:'The AI assistant is temporarily unavailable. Please try again later or use the contact form.'});}
   const data=await response.json(),reply=data.choices?.[0]?.message;
   let draft=null;
   for(const call of reply?.tool_calls||[]){if(call.function?.name==='prepare_inquiry'){try{draft=prepareInquiry(JSON.parse(call.function.arguments));}catch{/* Do not execute malformed model output. */}}}

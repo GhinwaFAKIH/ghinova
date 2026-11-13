@@ -1,16 +1,16 @@
 # GHINOVA website assistant
 
-The existing static GitHub Pages site loads `assistant.js`. The separate Node API uses Vercel AI Gateway via server-side OIDC; no API credential is exposed to visitors. The model is `google/gemini-2.5-flash-lite`, configurable with `AI_GATEWAY_MODEL`.
+The existing static GitHub Pages site loads `assistant.js`. The separate Node API uses Vercel AI Gateway via server-side request-scoped OIDC; no API credential is exposed to visitors. The model is `google/gemini-2.5-flash-lite`, configurable with `AI_GATEWAY_MODEL`.
 
 ## Deployment
 
 - Vercel team: `ghinova`
 - Project: `ghinova-assistant` (`prj_9gpuY5zCBOXHxgSmohgn3MPbg4Gy`)
 - Endpoint: `https://ghinova-assistant-ghinova.vercel.app/api/chat`
-- The initial API deployment is READY but Vercel sign-in protection is still enabled. Public-access change was blocked by automatic approval review and requires user approval.
-- Frontend changes remain in a draft PR until public access and a real model response are verified. Do not present the assistant as live yet.
+- The API deployment is READY and public access was explicitly approved by the user and enabled. Live Gateway requests return HTTP 403: a valid credit card must be added to the Vercel account to unlock free credits. No card or paid purchase was made.
+- Frontend changes remain in a draft PR until model access and a real model response are verified. Do not present the assistant as live yet.
 - Deploy this directory as the Vercel project root (Node 22+). No build step or dependencies required. Deployment currently uses inline source files; Git automatic deployment is not connected.
-- Account AI Gateway credits/access must be verified with a live request. No paid plan upgrade or credit purchase was made.
+- After the account owner completes the Gateway card requirement, verify a live course reply and project-brief tool call, then merge the frontend PR. No paid plan upgrade or credit purchase was made.
 
 ## Behavior and boundaries
 
@@ -23,4 +23,4 @@ Eight requests/minute per IP per warm instance is best-effort burst protection, 
 ## Validation
 
 Run `npm test` from this directory and `node --check ../assistant.js`.
-Six tests cover input limits, forbidden roles, tool validation, origin rejection, CORS, missing credentials, and mocked tool-call handling. A real deployed model response and browser QA remain to be checked after public access approval.
+Six tests cover input limits, forbidden roles, tool validation, origin rejection, CORS, missing credentials, and mocked tool-call handling. Desktop layout was visually checked in the browser. A live model response and end-to-end chat/brief interaction remain blocked by the account card requirement.
