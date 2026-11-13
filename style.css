@@ -89,3 +89,9 @@ a.primary:hover,a.secondary:hover,.navcta:hover{transform:translateY(-3px);box-s
 .level2-visual .agent-flow small{font-size:10px}
 .level2-note{margin-top:24px;padding:20px 24px;background:#fff;border:1px solid #e8e5e0;border-radius:18px;color:var(--muted);font-size:14px;line-height:1.7}
 .level2-note strong{color:var(--navy)}
+
+/* Business services: reuse the existing GHINOVA palette and card system. */
+.service-intro{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:-12px 0 32px}.service-intro span{padding:9px 15px;border:1px solid #ddd6eb;border-radius:999px;background:#fff;font-size:13px;color:var(--navy)}
+.service-grid article{display:flex;flex-direction:column}.service-number{font:700 16px 'Space Grotesk',sans-serif;color:#69528c;letter-spacing:.1em}.service-deliverable{border-top:1px solid #e8e1ef;margin:15px 0 20px;padding-top:16px}.service-deliverable strong{font-size:13px;color:var(--navy)}.service-deliverable p{margin-bottom:0}.service-link{margin-top:auto;align-self:flex-start;text-decoration:none;font-size:14px}
+.service-process{margin-top:32px;padding:32px;border:1px solid #e1d9eb;border-radius:24px;background:#fff}.service-process h3{font:700 clamp(22px,3vw,30px) 'Space Grotesk',sans-serif;margin:12px 0}.service-process ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding-left:22px}.service-process li::marker{color:#69528c;font-weight:700}.service-process p{color:var(--muted);font-size:14px;line-height:1.7}.service-note{padding-top:18px;border-top:1px solid #e8e1ef}.service-link:focus-visible{outline:3px solid #69528c;outline-offset:4px}
+@media(max-width:700px){.service-process{padding:24px}.service-process ol{grid-template-columns:1fr;gap:12px}.service-intro{margin-top:0}.service-link{max-width:100%;white-space:normal}}
