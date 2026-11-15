@@ -1,0 +1,65 @@
+# PREPARATION ONLY. Importing this Blueprint creates billable services.
+# Do not import/sync/deploy without approval. Auto-deploy is disabled.
+services:
+  - type: web
+    name: ghinova-static
+    runtime: static
+    autoDeployTrigger: "off"
+    buildCommand: python3 scripts/build_static.py
+    staticPublishPath: ./dist
+    envVars:
+      - key: PUBLIC_API_URL
+        value: ""
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /assistant-config.js
+        name: Cache-Control
+        value: no-cache
+  - type: web
+    name: ghinova-api
+    runtime: python
+    plan: starter
+    autoDeployTrigger: "off"
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT --workers 1 --no-proxy-headers --no-access-log --limit-concurrency 32 --timeout-keep-alive 5
+    healthCheckPath: /ready
+    disk:
+      name: budget-ledger
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.4
+      - key: APP_ENV
+        value: production
+      - key: MODEL_PROVIDER
+        value: openai
+      - key: MODEL_NAME
+        value: gpt-6-luna
+      - key: MODEL_URL
+        value: https://api.openai.com/v1/chat/completions
+      - key: MODEL_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: RATE_HASH_KEY
+        generateValue: true
+      - key: CLIENT_RATE_MODE
+        value: global
+      - key: BUDGET_DB
+        value: /var/data/usage.sqlite3
+      - key: DAILY_BUDGET_USD
+        value: "2"
+      - key: MONTHLY_BUDGET_USD
+        value: "20"
+      - key: RATE_LIMIT
+        value: "10"
+      - key: GLOBAL_RATE_LIMIT
+        value: "60"

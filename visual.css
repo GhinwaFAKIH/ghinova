@@ -1,0 +1,104 @@
+/* Shared presentation layer; existing component styles remain intact. */
+:root { --navy:#17233b; --muted:#56647a; --paper:#f7f9fc; --accent:#5646bd; }
+body { background:var(--paper); font-family:Inter,system-ui,-apple-system,sans-serif; line-height:1.55; }
+h1,h2,h3,h4,.brand { font-family:Inter,system-ui,sans-serif; letter-spacing:-.025em; }
+h1 { text-wrap:balance; } a { text-underline-offset:3px; }
+header,.shop-page header { min-height:80px; height:auto; gap:20px; flex-wrap:wrap; padding:18px 24px; }
+header nav { flex-wrap:wrap; gap:8px 18px; } header nav a { display:inline-block; padding:8px 0; font-size:13px; }
+header nav a.navcta { padding:10px 16px; }
+.hero { min-height:500px; padding-top:40px; padding-bottom:60px; background:none; gap:40px; }
+.hero h1 { font-size:clamp(2.3rem,5vw,4rem); line-height:1.1; }
+.lead { font-size:1.08rem; max-width:520px; }
+.portrait { min-height:360px; }.portrait img { width:min(100%,320px); height:360px; }.blob { width:310px; height:310px; }
+.section,.courses-section { padding:60px 24px; }.section-head { margin-bottom:28px; }
+.section-head h2,.about h2,.contact h2 { font-size:clamp(1.8rem,3vw,2.6rem); }
+.grid article,.tier-card,.agent-card,.booking-card,.project-card,.split-intro article { border:1px solid #dfe5ef; box-shadow:0 6px 22px #17233b06; border-radius:18px; }
+.split-intro article:nth-child(2) { box-shadow:0 6px 22px #17233b06; }.freelance { background:#edf1fa; }
+.course-main-card { border:1px solid #dfe5ef; box-shadow:none; border-radius:20px; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); }
+.course-visual,.course-info { padding:28px; }.course-icon { font-size:2.4rem; }.course-visual h3 { font-size:2rem; }
+.course-includes { gap:8px; }.course-showcase { margin-top:24px; }
+.course-preview { margin:24px 0; }.preview-feature { padding:16px; }
+.primary,.secondary,.shop-action { border-radius:10px; box-shadow:none; font-size:.95rem; }
+.actions,.buy-actions,.center-action { display:flex; flex-wrap:wrap; gap:12px; }.center-action { justify-content:center; }
+.more-details { border-top:1px solid #dfe5ef; margin:14px 0; padding-top:12px; }
+.more-details > summary { cursor:pointer; font-weight:700; color:var(--accent); padding:8px 0; }
+.more-details > .section,.more-details > .future-courses { margin:0 auto; padding:24px; }
+main > .more-details { max-width:1132px; margin:24px auto; padding:12px 24px; }
+.shop-wrap { padding-top:32px; }.catalog-intro h1 { font-size:clamp(2.3rem,5vw,3.4rem); }
+.tier-head { padding:22px; }.tier-products { padding:0 22px; }.tier-product { padding:20px 0; }
+.workshop { padding:28px; gap:28px; }.workshop h2 { font-size:clamp(1.8rem,3vw,2.4rem); }
+.agent-card h3 { font-size:1.25rem; }.agent-card > p { font-size:.94rem; }
+.agent-card .more-details { margin-bottom:20px; }.agent-card .shop-action { width:100%; }
+.agent-grid { gap:24px; }.product-status { font-size:.75rem; }
+.assistant-section { display:block; }.assistant-copy { max-width:700px; }.assistant-copy > ul { display:none; }
+footer { padding-bottom:100px; }
+a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid #8978e0; outline-offset:4px; }
+/* One shared floating assistant, with the existing guided flow as its offline tab. */
+.ai-launcher { position:fixed; bottom:22px; right:22px; z-index:1000; padding:14px 20px; color:white; background:#27366f; border-radius:999px; box-shadow:0 6px 24px #17233b30; font:700 15px Inter,system-ui,sans-serif; }
+.ai-dialog { position:fixed; inset:auto 22px 84px auto; z-index:1001; width:min(430px,calc(100vw - 32px)); max-height: min(720px,calc(100dvh - 110px)); padding:0; margin:0; border:1px solid #dfe5ef; border-radius:18px; background:white; color:var(--navy); box-shadow:0 16px 60px #17233b30; overflow:auto; }
+.ai-dialog[open] { display:flex; flex-direction:column; }
+.ai-bar { display:flex; justify-content:space-between; gap:12px; padding:16px 20px; background:#eef1fa; align-items:center; }
+.ai-bar button { background:none; padding:8px; font-size:1rem; }.ai-tabs { display:flex; gap:8px; padding:12px 16px; }
+.ai-tabs button { padding:10px; border-radius:8px; background:#eef1fa; }.ai-tabs button[aria-pressed="true"] { background:#27366f; color:white; }
+.ai-tabs label { margin-left:auto; }.ai-tabs select { padding:6px; }
+.ai-log { padding:0 18px; max-height:300px; overflow:auto; overscroll-behavior:contain; }
+.ai-message { padding:12px; background:#f3f5fa; border-radius:12px; margin:10px 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.ai-message.user { background:#e9e5fc; margin-left:30px; }.ai-resource { display:block; border:1px solid #dfe5ef; border-radius:10px; padding:12px; margin:8px 0; }
+.ai-resource p { margin:4px 0; font-size:.9rem; }.ai-resource a { display:inline-block; margin:4px 12px 0 0; font-weight:700; color:#40358e; }
+.ai-form { display:flex; flex-direction:column; padding:14px 18px; gap:8px; box-shadow:none; border-radius:0; }
+.ai-form textarea { width:100%; resize:vertical; max-height:140px; min-height:65px; font-size:16px; }.ai-form button { padding:12px; background:#27366f; color:white; border-radius:8px; }
+.ai-note { font-size:.76rem; color:#526079; padding:0 18px; margin:8px 0; }.ai-dialog .assistant-panel { border:0; border-radius:0; box-shadow:none; }.ai-dialog .guide-content { min-height:0; }
+.ai-dialog [hidden] { display:none!important; }
+@media(max-width:800px) {
+ header nav a:not(.navcta),.shop-page header nav a { display:inline-block; }
+ header nav { width:100%; gap:4px 16px; }
+ .hero,.course-main-card,.booking-grid,.assistant-section { grid-template-columns:1fr; }
+ .hero { padding:30px 20px; }.hero .portrait { min-height:280px; }.portrait img { height:280px; width:250px; }.blob { width:240px; height:240px; }.float { display:none; }
+ .section,.courses-section { padding:40px 20px; }.course-visual,.course-info { padding:22px; }
+ .catalog-grid,.agent-grid { grid-template-columns:1fr; }.workshop { padding:22px; }
+ .split-intro { margin-top:24px; }.shop-wrap { padding:26px 16px 60px; }
+ .about { padding:40px 20px; }.booking { padding:40px 20px; }
+ .contact { padding:24px 18px; }.trust { grid-template-columns:auto 1fr; }
+}
+@media(max-width:420px) { .ai-dialog { right:10px; bottom:76px; width:calc(100vw - 20px); max-height:calc(100dvh - 90px); }.ai-launcher { right:12px; bottom:14px; }.ai-tabs { gap:4px; }.ai-tabs button { padding:8px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+.site-menu { position:relative; }
+.site-menu > summary { cursor:pointer; padding:10px 14px; border:1px solid #dfe5ef; border-radius:10px; font-weight:700; }
+.site-menu nav { position:absolute; z-index:30; right:0; top:48px; width:230px; display:flex; flex-direction:column; align-items:stretch; gap:0; padding:16px; border:1px solid #dfe5ef; border-radius:14px; background:white; box-shadow:0 12px 32px #17233b20; }
+@media(max-width:800px) { header > nav { width:auto; flex:1 1 auto; } header .site-menu nav { width:230px; }.site-menu { margin-left:auto; } }
+/* Ghinova AI companion: scoped to the existing floating chat. */
+.ai-dialog { border-radius:24px; overflow:hidden; }
+.ai-bar { background:linear-gradient(120deg,#eef0ff,#f7f5fc); padding:12px 16px; }
+.ai-bar strong { flex:1; }.ai-bar > div { display:flex; }
+.ai-avatar { display:grid; place-items:center; flex:0 0 30px; height:30px; border-radius:50%; color:white; background:#6352a5; }
+#ai-chat { display:flex; flex-direction:column; min-height:0; overflow:auto; }
+.ai-log { min-height:80px; flex:1 1 auto; padding:0 14px; }
+.ai-message { width:fit-content; max-width:92%; line-height:1.55; font-size:.93rem; border-radius:16px 16px 16px 4px; }
+.ai-message.user { margin-left:auto; border-radius:16px 16px 4px 16px; background:#37306a; color:white; }
+.ai-resource { margin:8px 14px; font-size:.86rem; background:#fafaff; }
+.ai-tabs { flex-wrap:wrap; align-items:center; padding:8px 12px; font-size:.8rem; }
+.ai-tabs label { display:flex; align-items:center; gap:4px; }
+.ai-starters { display:flex; flex-wrap:wrap; gap:6px; padding:8px 14px; }
+.ai-starters button { padding:8px 10px; border:1px solid #ded8ef; border-radius:18px; color:#44366b; background:white; font-size:.78rem; }
+.ai-form { padding:8px 14px; gap:5px; flex-shrink:0; }.ai-form label { font-size:.8rem; }
+.ai-form textarea { border-radius:12px; min-height:52px; resize:none; }.ai-form button { padding:9px; }
+.ai-typing::after { content:' • • •'; display:inline-block; animation:ai-pulse 1s ease-in-out infinite alternate; }
+@keyframes ai-pulse { to { opacity:.25; } }
+@media(max-width:420px) { .ai-bar { gap:6px; }.ai-bar button { font-size:.85rem; }.ai-dialog { max-height:calc(100dvh - 90px); }.ai-note { font-size:.7rem; }.ai-log { max-height:35dvh; } }
+@media(prefers-reduced-motion:reduce) { .ai-typing::after { animation:none; } }
+/* Spacious conversation workspace; supersedes the earlier compact panel. */
+.ai-dialog { width:min(560px,calc(100vw - 32px)); height:min(780px,calc(100dvh - 110px)); max-height:calc(100dvh - 110px); border-radius:26px; background:#fbfaf8; }
+.ai-bar { padding:20px; background:#fbfaf8; border-bottom:1px solid #e9e5df; }
+.ai-bar strong { font-size:1.2rem; letter-spacing:-.03em; }.ai-avatar { height:38px; flex-basis:38px; }
+.ai-tabs { padding:10px 18px; border-bottom:1px solid #eee9e3; }
+#ai-chat { flex:1; overflow:hidden; }.ai-log { flex:1; max-height:none; padding:18px 22px; min-height:0; }
+.ai-message { font-size:1rem; line-height:1.65; padding:16px 18px; margin:0 0 20px; max-width:90%; }
+.ai-message.assistant { background:white; border:1px solid #ece7e0; border-radius:4px 20px 20px 20px; }
+.ai-message.user { background:#35344d; border-radius:20px 4px 20px 20px; }
+.ai-form { margin:0 14px 6px; padding:12px; border:1px solid #ded9d3; border-radius:20px; background:white; display:grid; grid-template-columns:minmax(0,1fr) auto; }
+.ai-form label { grid-column:1/-1; }.ai-form textarea { border:0; background:transparent; padding:6px; min-height:52px; }.ai-form button { align-self:end; border-radius:14px; }
+#ai-privacy { margin:6px 0; font-size:.7rem; }#ai-status { min-height:1em; margin:4px 0 10px; }
+.ai-starters { flex-shrink:0; padding:8px 22px; }.ai-starters button { background:#f0ede7; border:0; padding:10px 14px; }
+#ai-offline { overflow:auto; min-height:0; }
+@media(max-width:600px) { .ai-dialog { inset:8px 8px auto; width:calc(100vw - 16px); height:calc(100dvh - 16px); max-height:calc(100dvh - 16px); border-radius:20px; }.ai-bar { padding:14px; }.ai-log { max-height:none; padding:14px; }.ai-message { padding:12px 14px; }.ai-tabs { padding:8px; }.ai-form { margin:0 8px 4px; }.ai-starters { padding:8px 14px; } }

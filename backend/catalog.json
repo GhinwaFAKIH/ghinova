@@ -1,0 +1,257 @@
+[
+  {
+    "id": "ai-nlp-fundamentals",
+    "name": "AI & NLP Fundamentals",
+    "description": "Build a foundation in AI and natural language processing, from preparing text to understanding how language models predict the next token.",
+    "status": "listed",
+    "level": "Beginner",
+    "url": "shop.html#ai-nlp-fundamentals",
+    "source": "shop.html",
+    "price": 59,
+    "checkout": "https://whop.com/checkout/plan_aGF90zfZKraHK/"
+  },
+  {
+    "id": "text-preprocessing-lab",
+    "name": "Text Preprocessing Lab",
+    "description": "Turn raw text into tokens and compare the vocabulary of two documents.",
+    "status": "listed",
+    "level": "Beginner",
+    "url": "shop.html#text-preprocessing-lab",
+    "source": "shop.html",
+    "price": 0,
+    "download": "course-labs/shop/text-preprocessing-lab.ipynb"
+  },
+  {
+    "id": "pdf-chatbot",
+    "name": "Build Your First AI PDF Chatbot",
+    "description": "Use a Google Colab notebook to ask questions about a PDF, find the passage behind an answer, and see what happens when the document has no evidence.",
+    "status": "listed",
+    "level": "Beginner",
+    "url": "shop.html#pdf-chatbot",
+    "source": "shop.html",
+    "price": 5,
+    "checkout": "https://whop.com/checkout/plan_i04JuHuS1Rps2/"
+  },
+  {
+    "id": "retrieval-evaluation-lab",
+    "name": "Retrieval Evaluation Lab",
+    "description": "Compare ranked results with hit rate and mean reciprocal rank.",
+    "status": "listed",
+    "level": "Intermediate",
+    "url": "shop.html#retrieval-evaluation-lab",
+    "source": "shop.html",
+    "price": 0,
+    "download": "course-labs/shop/retrieval-evaluation-lab.ipynb"
+  },
+  {
+    "id": "rag-retrieval-workshop",
+    "name": "RAG Retrieval & Evidence Workshop",
+    "description": "Build and benchmark two rankers, test when to decline an answer, and check citations against retrieved sources.",
+    "status": "listed",
+    "level": "Intermediate",
+    "url": "shop.html#rag-retrieval-workshop",
+    "source": "shop.html",
+    "price": 9,
+    "checkout": "https://whop.com/checkout/plan_P0wG9ytLEGde9/"
+  },
+  {
+    "id": "graph-retrieval-lab",
+    "name": "Graph Retrieval Lab",
+    "description": "Traverse a two-hop knowledge graph query and return the evidence path.",
+    "status": "listed",
+    "level": "Advanced",
+    "url": "shop.html#graph-retrieval-lab",
+    "source": "shop.html",
+    "price": 0,
+    "download": "course-labs/shop/graph-retrieval-lab.ipynb"
+  },
+  {
+    "id": "graph-retrieval-workshop",
+    "name": "Graph Retrieval & Rules Workshop",
+    "description": "Trace multi-hop evidence, resolve conflicting sources, and apply a rule with auditable premises.",
+    "status": "listed",
+    "level": "Advanced",
+    "url": "shop.html#graph-retrieval-workshop",
+    "source": "shop.html",
+    "price": 15,
+    "checkout": "https://whop.com/checkout/plan_Dol5IjiDm4szw/"
+  },
+  {
+    "id": "introduction-to-ai",
+    "name": "Introduction to AI",
+    "description": "Understand AI, machine learning, and everyday applications.",
+    "status": "coming_soon",
+    "price": 0,
+    "url": "shop.html#introduction-to-ai",
+    "source": "shop.html"
+  },
+  {
+    "id": "python-for-ai-beginners",
+    "name": "Python for AI Beginners",
+    "description": "Build Python foundations for your first AI project.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#python-for-ai-beginners",
+    "source": "shop.html"
+  },
+  {
+    "id": "build-a-rag-chatbot",
+    "name": "Build a RAG Chatbot",
+    "description": "Build answers grounded in your documents.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#build-a-rag-chatbot",
+    "source": "shop.html"
+  },
+  {
+    "id": "nlp-with-python",
+    "name": "NLP with Python",
+    "description": "Prepare, represent, and compare text with Python.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#nlp-with-python",
+    "source": "shop.html"
+  },
+  {
+    "id": "local-llms-with-ollama",
+    "name": "Local LLMs with Ollama",
+    "description": "Run local language models and connect them to Python.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#local-llms-with-ollama",
+    "source": "shop.html"
+  },
+  {
+    "id": "knowledge-graphs-and-sparql",
+    "name": "Knowledge Graphs and SPARQL",
+    "description": "Model connected facts with RDF. Query them with SPARQL.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#knowledge-graphs-and-sparql",
+    "source": "shop.html"
+  },
+  {
+    "id": "graphrag-applications",
+    "name": "GraphRAG Applications",
+    "description": "Connect graph relationships to evidence-based answers.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#graphrag-applications",
+    "source": "shop.html"
+  },
+  {
+    "id": "building-ai-agents",
+    "name": "Building AI Agents",
+    "description": "Build tool-using workflows with human oversight.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "shop.html#building-ai-agents",
+    "source": "shop.html"
+  },
+  {
+    "id": "customer-support-agent",
+    "name": "AI Customer Support Agent",
+    "description": "Help customers find answers in approved support content.",
+    "status": "planned_service",
+    "price": null,
+    "url": "shop.html#customer-support-agent",
+    "contact": "index.html#contact",
+    "source": "shop.html"
+  },
+  {
+    "id": "document-rag-assistant",
+    "name": "Document RAG Assistant",
+    "description": "Turn documents into answers with source references.",
+    "status": "planned_service",
+    "price": null,
+    "url": "shop.html#document-rag-assistant",
+    "contact": "index.html#contact",
+    "source": "shop.html"
+  },
+  {
+    "id": "knowledge-graph-agent",
+    "name": "Knowledge Graph / GraphRAG Agent",
+    "description": "Explore connected facts and trace supporting evidence.",
+    "status": "planned_service",
+    "price": null,
+    "url": "shop.html#knowledge-graph-agent",
+    "contact": "index.html#contact",
+    "source": "shop.html"
+  },
+  {
+    "id": "instagram-content-agent",
+    "name": "Instagram Content Creation Agent",
+    "description": "Draft educational content. Review first. Publish only with approval.",
+    "status": "planned_service",
+    "price": null,
+    "url": "shop.html#instagram-content-agent",
+    "contact": "index.html#contact",
+    "source": "shop.html"
+  },
+  {
+    "id": "training-1h",
+    "name": "1-hour private training",
+    "description": "Live Python or AI training. Prices before applicable tax.",
+    "status": "listed",
+    "price": 20,
+    "url": "index.html#book",
+    "checkout": "https://cal.com/ginwa-fakih-fluyzt/ghinova-1-to-1-training-session",
+    "source": "index.html"
+  },
+  {
+    "id": "training-5h",
+    "name": "5-hour private training package",
+    "description": "Live Python or AI training. Prices before applicable tax.",
+    "status": "listed",
+    "price": 90,
+    "url": "index.html#book",
+    "checkout": "https://cal.com/ginwa-fakih-fluyzt/5-hour-package",
+    "source": "index.html"
+  },
+  {
+    "id": "training-10h",
+    "name": "10-hour private training package",
+    "description": "Live Python or AI training. Prices before applicable tax.",
+    "status": "listed",
+    "price": 170,
+    "url": "index.html#book",
+    "checkout": "https://cal.com/ginwa-fakih-fluyzt/10-hour-package",
+    "source": "index.html"
+  },
+  {
+    "id": "pdf-tutorial",
+    "name": "Free Python PDF chatbot tutorial",
+    "description": "A free written Python guide.",
+    "status": "listed",
+    "price": 0,
+    "url": "guides/pdf-chatbot-python/",
+    "source": "guides/pdf-chatbot-python/index.html"
+  },
+  {
+    "id": "rag-tutorial",
+    "name": "Free RAG evaluation tutorial",
+    "description": "A free written Python guide.",
+    "status": "listed",
+    "price": 0,
+    "url": "guides/evaluate-rag-chatbot-python/",
+    "source": "guides/evaluate-rag-chatbot-python/index.html"
+  },
+  {
+    "id": "contact",
+    "name": "Contact Ginwa",
+    "description": "Discuss training or request a custom project quote.",
+    "status": "contact",
+    "price": null,
+    "url": "index.html#contact",
+    "source": "index.html"
+  },
+  {
+    "id": "level-two",
+    "name": "Level 2: LLMs, RAG and GraphRAG",
+    "description": "Planned self-paced course. No confirmed price or checkout.",
+    "status": "coming_soon",
+    "price": null,
+    "url": "index.html#level-two",
+    "source": "index.html"
+  }
+]

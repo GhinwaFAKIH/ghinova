@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI &amp; NLP Course, Python Labs and RAG Workshops | GHINOVA</title><meta name="description" content="Explore a self-paced AI and NLP course, free Python notebooks, and hands-on workshops on PDF chatbots, RAG evaluation and knowledge graph retrieval."><link rel="canonical" href="https://ghinwafakih.github.io/ghinova/shop.html"><meta property="og:type" content="website"><meta property="og:site_name" content="GHINOVA"><meta property="og:title" content="AI &amp; NLP Course, Python Labs and RAG Workshops | GHINOVA"><meta property="og:description" content="Explore a self-paced AI and NLP course, free Python notebooks, and hands-on workshops on PDF chatbots, RAG evaluation and knowledge graph retrieval."><meta property="og:url" content="https://ghinwafakih.github.io/ghinova/shop.html"><meta property="og:image" content="https://ghinwafakih.github.io/ghinova/ghinwa-avatar.png"><link rel="stylesheet" href="style.css"><style>
 .shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}.shop-label{font-weight:800;color:#5745b3;letter-spacing:.12em;font-size:.78rem}
-.shop-wrap{max-width:1150px;margin:auto;padding:60px 24px 100px}
 .shop-action{display:inline-block;text-align:center;background:#27366f;color:white!important;text-decoration:none;padding:13px;border-radius:12px;font-weight:700}
 .shop-info{background:#f1f4ff;border-radius:18px;padding:26px;line-height:1.7}
 .shop-back{display:inline-block;margin:20px 0;color:#27366f;font-weight:700;text-decoration:none}
@@ -80,6 +79,39 @@ body{background:#fafbff}
 @media (max-width: 760px) {
   .workshop { grid-template-columns: 1fr; }
 }
+
+/* Shop-only navigation and availability styles. */
+.shop-page header { height: auto; min-height: 78px; flex-wrap: wrap; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
+.shop-page header nav { flex-wrap: wrap; gap: 8px 20px; }
+.shop-page nav a { display: inline-block; padding: 12px 0; }
+.shop-page a:focus-visible { outline: 3px solid #8170eb; outline-offset: 4px; }
+.shop-page nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 5px; }
+.catalog-nav { flex-wrap: wrap; gap: 10px 24px; margin: 18px 0; }
+.catalog-nav a { color: #40358e; }
+.tier-card { scroll-margin-top: 24px; }
+.product-status { display: inline-block; padding: 6px 10px; border-radius: 8px; background: #eef0f6; color: #49536b; font-size: .85rem; font-weight: 700; }
+.tier-product, .workshop > div { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .shop-wrap { padding: 28px 16px 60px; }
+  .shop-page header { padding-left: 16px; padding-right: 16px; }
+  .shop-page header nav { width: 100%; gap: 4px 16px; }
+  .workshop h2 { font-size: 2rem; }
+  .workshop-price { flex-wrap: wrap; }
+}
+
+/* AI agent service concepts: separate from purchasable learning products. */
+.agent-marketplace { margin-top: 64px; padding-top: 36px; border-top: 1px solid #dfe5f2; scroll-margin-top: 24px; }
+.agent-marketplace > p { max-width: 760px; color: #526079; line-height: 1.65; }
+.agent-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 28px 0; }
+.agent-card { display: flex; flex-direction: column; min-width: 0; padding: clamp(20px, 3vw, 30px); border: 1px solid #dfe5f2; border-radius: 20px; background: white; overflow-wrap: anywhere; }
+.agent-card h3 { margin: 18px 0 8px; font-size: 1.4rem; }
+.agent-card h4 { margin: 18px 0 6px; }
+.agent-card p, .agent-card li { color: #526079; line-height: 1.65; }
+.agent-card p { margin: 6px 0 12px; }
+.agent-card ul { margin: 0 0 16px; padding-left: 20px; }
+.agent-card .product-status { align-self: flex-start; }
+.agent-card .shop-action { margin-top: auto; }
+@media (max-width: 760px) { .agent-grid { grid-template-columns: 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -328,11 +360,123 @@ body{background:#fafbff}
   ]
 }
 </script>
-</head><body><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html">Digital Shop</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
+<link rel="stylesheet" href="visual.css"><script src="assistant-config.js" defer></script></head><body class="shop-page"><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav aria-label="Main navigation"><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html" aria-current="page">Digital Shop</a><a href="#ai-agents">AI Agents</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
 <main class="shop-wrap"><p><a class="shop-back" href="./">GHINOVA</a> / <span>Digital Shop</span></p><section class="catalog-intro" aria-labelledby="shop-title">
     <span class="shop-label">GHINOVA ACADEMY · DIGITAL SHOP</span>
     <h1 id="shop-title">Learn AI by building.</h1>
-  <p>Explore the full AI &amp; NLP course or choose a shorter workshop at your level. Every free lab includes a worked example, a challenge, and a reference solution.</p>
+  <p>Choose your level, explore existing courses and free labs, or preview upcoming topics. Every free lab includes a worked example, a challenge, and a reference solution.</p>
+</section>
+<section class="catalog" aria-labelledby="labs-title">
+  <h2 class="catalog-title" id="labs-title">Find your next AI project</h2>
+  <p class="catalog-intro">Start with the basics, build document-based applications, then explore knowledge graphs and agents. Products marked Coming Soon are not yet available to buy or download.</p>
+  <nav class="catalog-nav" aria-label="Shop categories">
+    <a href="#beginner">Beginner</a><a href="#intermediate">Intermediate</a><a href="#advanced">Advanced</a>
+  </nav>
+  <div class="catalog-grid">
+    <article class="tier-card" id="beginner" aria-labelledby="beginner-title">
+      <div class="tier-head"><small>LEVEL 01</small><h2 id="beginner-title">Beginner</h2><p>Build your foundations in AI, NLP, and Python.</p></div>
+      <ul class="tier-products">
+        <li class="tier-product" id="introduction-to-ai">
+          <span class="resource-kind">Free · Planned introduction</span>
+          <h3>Introduction to AI</h3>
+          <p>Understand AI, machine learning, and everyday applications.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="python-for-ai-beginners">
+          <span class="resource-kind">Planned beginner course</span>
+          <h3>Python for AI Beginners</h3>
+          <p>Build Python foundations for your first AI project.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="text-preprocessing-lab">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Text Preprocessing Lab</h3>
+          <p>Turn raw text into tokens and compare the vocabulary of two documents.</p>
+          <a href="course-labs/shop/text-preprocessing-lab.ipynb" download>Download Text Preprocessing →</a>
+        </li>
+        <li class="tier-product">
+          <span class="resource-kind">€5 · One-time workshop</span>
+          <h3>Build Your First Chatbot</h3>
+          <p>Ask questions about a PDF and trace the answer back to its source.</p>
+          <a href="https://whop.com/checkout/plan_i04JuHuS1Rps2/">Buy Now →</a>
+          <p><a href="workshops/pdf-chatbot/">See what’s included</a></p>
+          <p><a href="guides/pdf-chatbot-python/">Read the free Python tutorial</a></p>
+        </li>
+      </ul>
+    </article>
+    <article class="tier-card" id="intermediate" aria-labelledby="intermediate-title">
+      <div class="tier-head"><small>LEVEL 02</small><h2 id="intermediate-title">Intermediate</h2><p>Measure retrieval quality and design prompts with citations.</p></div>
+      <ul class="tier-products">
+        <li class="tier-product" id="build-a-rag-chatbot">
+          <span class="resource-kind">Planned project</span>
+          <h3>Build a RAG Chatbot</h3>
+          <p>Build answers grounded in your documents.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="nlp-with-python">
+          <span class="resource-kind">Planned practical course</span>
+          <h3>NLP with Python</h3>
+          <p>Prepare, represent, and compare text with Python.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="local-llms-with-ollama">
+          <span class="resource-kind">Planned practical guide</span>
+          <h3>Local LLMs with Ollama</h3>
+          <p>Run local language models and connect them to Python.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="retrieval-evaluation-lab">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Retrieval Evaluation Lab</h3>
+          <p>Compare ranked results with hit rate and mean reciprocal rank.</p>
+          <a href="course-labs/shop/retrieval-evaluation-lab.ipynb" download>Download Retrieval Evaluation →</a>
+          <p><a href="guides/evaluate-rag-chatbot-python/">Read the free RAG evaluation tutorial</a></p>
+        </li>
+        <li class="tier-product" id="rag-retrieval-workshop">
+          <span class="resource-kind">€9 · One-time workshop</span>
+          <h3>RAG Retrieval &amp; Evidence Workshop</h3>
+          <p>Build and benchmark two rankers, test when to decline an answer, and check citations against retrieved sources.</p>
+          <a href="https://whop.com/checkout/plan_P0wG9ytLEGde9/">Buy Now →</a>
+        </li>
+      </ul>
+    </article>
+    <article class="tier-card" id="advanced" aria-labelledby="advanced-title">
+      <div class="tier-head"><small>LEVEL 03</small><h2 id="advanced-title">Advanced</h2><p>Retrieve evidence across graph relationships and apply rules.</p></div>
+      <ul class="tier-products">
+        <li class="tier-product" id="knowledge-graphs-and-sparql">
+          <span class="resource-kind">Planned practical course</span>
+          <h3>Knowledge Graphs and SPARQL</h3>
+          <p>Model connected facts with RDF. Query them with SPARQL.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="graphrag-applications">
+          <span class="resource-kind">Planned project</span>
+          <h3>GraphRAG Applications</h3>
+          <p>Connect graph relationships to evidence-based answers.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="building-ai-agents">
+          <span class="resource-kind">Planned practical course</span>
+          <h3>Building AI Agents</h3>
+          <p>Build tool-using workflows with human oversight.</p>
+          <span class="product-status">Coming Soon</span>
+        </li>
+        <li class="tier-product" id="graph-retrieval-lab">
+          <span class="resource-kind">Free · Python notebook</span>
+          <h3>Graph Retrieval Lab</h3>
+          <p>Traverse a two-hop knowledge graph query and return the evidence path.</p>
+          <a href="course-labs/shop/graph-retrieval-lab.ipynb" download>Download Graph Retrieval →</a>
+        </li>
+        <li class="tier-product" id="graph-retrieval-workshop">
+          <span class="resource-kind">€15 · One-time workshop</span>
+          <h3>Graph Retrieval &amp; Rules Workshop</h3>
+          <p>Trace multi-hop evidence, resolve conflicting sources, and apply a rule with auditable premises.</p>
+          <a href="https://whop.com/checkout/plan_Dol5IjiDm4szw/">Buy Now →</a>
+        </li>
+      </ul>
+    </article>
+  </div>
+  <p class="workshop-note">Paid offers are one-time purchases. Whop shows any applicable tax at checkout.</p>
 </section>
 <section class="workshop" id="pdf-chatbot" aria-labelledby="workshop-title">
   <div>
@@ -341,7 +485,7 @@ body{background:#fafbff}
     <p class="workshop-intro">Use a Google Colab notebook to ask questions about a PDF, find the passage behind an answer, and see what happens when the document has no evidence.</p>
     <p><strong>Basic Python</strong> · Self-paced · No API key</p>
     <div class="workshop-price"><strong>€5</strong><span>One-time launch price</span></div>
-    <a class="shop-action" href="https://whop.com/checkout/plan_i04JuHuS1Rps2/">Get the workshop on Whop →</a>
+    <a class="shop-action" href="https://whop.com/checkout/plan_i04JuHuS1Rps2/">Buy Now →</a>
     <p><a href="workshops/pdf-chatbot/">See the PDF workshop details and FAQ →</a></p><p class="workshop-note">Whop handles payment and course access. Any applicable tax is shown at checkout.</p>
   </div>
   <div class="workshop-demo" aria-labelledby="preview-title">
@@ -365,7 +509,7 @@ body{background:#fafbff}
     <p class="workshop-intro">Build a foundation in AI and natural language processing, from preparing text to understanding how language models predict the next token.</p>
     <p><strong>Beginner level</strong> · Self-paced · Five downloadable slide lessons and a guided Colab lab</p>
     <div class="workshop-price"><strong>€59</strong><span>One-time course price</span></div>
-    <a class="shop-action" href="https://whop.com/checkout/plan_aGF90zfZKraHK/">Buy Fundamentals on Whop →</a>
+    <a class="shop-action" href="https://whop.com/checkout/plan_aGF90zfZKraHK/">Buy Now →</a>
     <p class="workshop-note">Whop handles payment and course access. Any applicable tax is shown at checkout.</p>
   </div>
   <div class="workshop-demo">
@@ -381,69 +525,10 @@ body{background:#fafbff}
     <p>Practice next-token prediction in the included Colab lab.</p>
   </div>
 </section>
-<section class="catalog" aria-labelledby="labs-title">
-  <h2 class="catalog-title" id="labs-title">Short workshops and free labs</h2>
-  <div class="catalog-grid">
-    <article class="tier-card" aria-labelledby="beginner-title">
-      <div class="tier-head"><small>LEVEL 01</small><h2 id="beginner-title">Beginner</h2><p>Build your foundations in AI, NLP, and Python.</p></div>
-      <ul class="tier-products">
-        <li class="tier-product" id="text-preprocessing-lab">
-          <span class="resource-kind">Free · Python notebook</span>
-          <h3>Text Preprocessing Lab</h3>
-          <p>Turn raw text into tokens and compare the vocabulary of two documents.</p>
-          <a href="course-labs/shop/text-preprocessing-lab.ipynb" download>Download Text Preprocessing →</a>
-        </li>
-        <li class="tier-product">
-          <span class="resource-kind">€5 · One-time workshop</span>
-          <h3>Build Your First AI PDF Chatbot</h3>
-          <p>Ask questions about a PDF and trace the answer back to its source.</p>
-          <a href="https://whop.com/checkout/plan_i04JuHuS1Rps2/">Buy PDF Chatbot Workshop on Whop →</a>
-          <p><a href="workshops/pdf-chatbot/">See what’s included</a></p>
-          <p><a href="guides/pdf-chatbot-python/">Read the free Python tutorial</a></p>
-        </li>
-      </ul>
-    </article>
-    <article class="tier-card" aria-labelledby="intermediate-title">
-      <div class="tier-head"><small>LEVEL 02</small><h2 id="intermediate-title">Intermediate</h2><p>Measure retrieval quality and design prompts with citations.</p></div>
-      <ul class="tier-products">
-        <li class="tier-product" id="retrieval-evaluation-lab">
-          <span class="resource-kind">Free · Python notebook</span>
-          <h3>Retrieval Evaluation Lab</h3>
-          <p>Compare ranked results with hit rate and mean reciprocal rank.</p>
-          <a href="course-labs/shop/retrieval-evaluation-lab.ipynb" download>Download Retrieval Evaluation →</a>
-          <p><a href="guides/evaluate-rag-chatbot-python/">Read the free RAG evaluation tutorial</a></p>
-        </li>
-        <li class="tier-product" id="rag-retrieval-workshop">
-          <span class="resource-kind">€9 · One-time workshop</span>
-          <h3>RAG Retrieval &amp; Evidence Workshop</h3>
-          <p>Build and benchmark two rankers, test when to decline an answer, and check citations against retrieved sources.</p>
-          <a href="https://whop.com/checkout/plan_P0wG9ytLEGde9/">Buy RAG Retrieval &amp; Evidence on Whop →</a>
-        </li>
-      </ul>
-    </article>
-    <article class="tier-card" aria-labelledby="advanced-title">
-      <div class="tier-head"><small>LEVEL 03</small><h2 id="advanced-title">Advanced</h2><p>Retrieve evidence across graph relationships and apply rules.</p></div>
-      <ul class="tier-products">
-        <li class="tier-product" id="graph-retrieval-lab">
-          <span class="resource-kind">Free · Python notebook</span>
-          <h3>Graph Retrieval Lab</h3>
-          <p>Traverse a two-hop knowledge graph query and return the evidence path.</p>
-          <a href="course-labs/shop/graph-retrieval-lab.ipynb" download>Download Graph Retrieval →</a>
-        </li>
-        <li class="tier-product" id="graph-retrieval-workshop">
-          <span class="resource-kind">€15 · One-time workshop</span>
-          <h3>Graph Retrieval &amp; Rules Workshop</h3>
-          <p>Trace multi-hop evidence, resolve conflicting sources, and apply a rule with auditable premises.</p>
-          <a href="https://whop.com/checkout/plan_Dol5IjiDm4szw/">Buy Graph Retrieval &amp; Rules on Whop →</a>
-        </li>
-      </ul>
-    </article>
-  </div>
-  <p class="workshop-note">Paid offers are one-time purchases. Whop shows any applicable tax at checkout.</p>
-</section>
+
 
 <section class="shop-info workshop-includes" aria-labelledby="includes-title">
-  <h2 id="includes-title">What you’ll get</h2>
+  <h2 id="includes-title">What’s included in the €5 PDF Chatbot Workshop</h2>
   <ul>
     <li>A runnable Colab notebook with guided Python examples.</li>
     <li>A two-page sample PDF to test your chatbot and check its citations.</li>
@@ -452,4 +537,82 @@ body{background:#fafbff}
   <p>After checkout, open the workshop in Whop, go to <strong>Set up and run the notebook</strong>, and download the three files under <strong>File attachments</strong>.</p>
   <p>Need help accessing the workshop? <a href="index.html#contact">Contact GHINOVA</a>.</p>
 </section>
-</main><footer><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><p>Learn · Build · Innovate</p><p>© 2026 Ghinwa</p></footer></body></html>
+<section class="agent-marketplace" id="ai-agents" aria-labelledby="agents-title">
+  <span class="shop-label">CUSTOM AI SERVICES</span>
+  <h2 id="agents-title">AI Agents Marketplace</h2>
+  <p>Four agent concepts. Custom scope. Human oversight. Request a quote to explore your project.</p>
+  <p>Planned services, not ready-made products. Pricing and delivery follow a scope discussion.</p>
+  <div class="agent-grid">
+    <article class="agent-card" id="customer-support-agent" aria-labelledby="customer-support-agent-title">
+      <span class="product-status">Planned · Custom development</span>
+      <h3 id="customer-support-agent-title">AI Customer Support Agent</h3>
+      <p>Help customers find answers in approved support content.</p>
+      <details class="more-details"><summary>Learn More</summary><h4>Proposed features</h4>
+      <ul>
+        <li>Answers grounded in your FAQ and help articles</li>
+        <li>Human handoff when an issue needs review</li>
+        <li>Evaluation against agreed support questions</li>
+      </ul>
+      <h4>Potential benefits</h4>
+      <p>Help your team handle recurring questions and keep answers consistent with approved guidance.</p>
+      <h4>Who it’s for</h4>
+      <p>Small businesses, online shops, and customer support teams.</p>
+      </details><a class="shop-action" href="index.html#contact" aria-label="Request a quote for AI Customer Support Agent">Request a Quote →</a>
+    </article>
+    <article class="agent-card" id="document-rag-assistant" aria-labelledby="document-rag-assistant-title">
+      <span class="product-status">Planned · Custom development</span>
+      <h3 id="document-rag-assistant-title">Document RAG Assistant</h3>
+      <p>Turn documents into answers with source references.</p>
+      <details class="more-details"><summary>Learn More</summary><h4>Proposed features</h4>
+      <ul>
+        <li>Ingestion of agreed PDFs and internal documentation</li>
+        <li>Answers with source references and evidence excerpts</li>
+        <li>No-evidence fallback and access controls scoped to your needs</li>
+      </ul>
+      <h4>Potential benefits</h4>
+      <p>Make internal knowledge easier to find and give readers sources they can check.</p>
+      <h4>Who it’s for</h4>
+      <p>Research teams, consultancies, training providers, and document-heavy organizations.</p>
+      </details><a class="shop-action" href="index.html#contact" aria-label="Request a quote for Document RAG Assistant">Request a Quote →</a>
+    </article>
+    <article class="agent-card" id="knowledge-graph-agent" aria-labelledby="knowledge-graph-agent-title">
+      <span class="product-status">Planned · Custom development</span>
+      <h3 id="knowledge-graph-agent-title">Knowledge Graph / GraphRAG Agent</h3>
+      <p>Explore connected facts and trace supporting evidence.</p>
+      <details class="more-details"><summary>Learn More</summary><h4>Proposed features</h4>
+      <ul>
+        <li>Domain modeling with entities and relationships</li>
+        <li>RDF and SPARQL queries where appropriate</li>
+        <li>Graph-guided retrieval with traceable evidence paths</li>
+      </ul>
+      <h4>Potential benefits</h4>
+      <p>Help teams investigate connections across information sources and inspect how an answer was supported.</p>
+      <h4>Who it’s for</h4>
+      <p>Research groups, knowledge-management teams, and organizations with interconnected data.</p>
+      </details><a class="shop-action" href="index.html#contact" aria-label="Request a quote for Knowledge Graph / GraphRAG Agent">Request a Quote →</a>
+    </article>
+    <article class="agent-card" id="instagram-content-agent" aria-labelledby="instagram-content-agent-title">
+      <span class="product-status">Planned · Custom development</span>
+      <h3 id="instagram-content-agent-title">Instagram Content Creation Agent</h3>
+      <p>Draft educational content. Review first. Publish only with approval.</p>
+      <details class="more-details"><summary>Learn More</summary><h4>Proposed features</h4>
+      <ul>
+        <li>Draft educational carousel outlines and slide text</li>
+        <li>Generate captions and suggested hashtags</li>
+        <li>Prepare posts for publishing through an authorized Instagram integration</li>
+        <li>Require explicit user approval before any post is published</li>
+      </ul>
+      <h4>Potential benefits</h4>
+      <p>Help educators prepare consistent content drafts while retaining editorial control over accuracy and publication.</p>
+      <h4>Who it’s for</h4>
+      <p>Educators, course creators, AI trainers, and educational brands.</p>
+      </details><a class="shop-action" href="index.html#contact" aria-label="Request a quote for Instagram Content Creation Agent">Request a Quote →</a>
+    </article>
+  </div>
+  <div class="shop-info">
+    <h3>Tell us what you want to build</h3>
+    <p>In your inquiry, include the agent name, intended users, available documents or tools, and preferred timeline. We’ll discuss a scoped prototype and how to evaluate it before considering production deployment.</p>
+    <p><strong>Instagram publishing is not connected or enabled.</strong> Any future publishing workflow will require an authorized Instagram integration and your approval of the final content before publishing. Draft generation alone does not authorize posting.</p>
+  </div>
+</section>
+</main><footer><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><p>Learn · Build · Innovate</p><p>© 2026 Ginwa</p></footer><script src="assistant.js"></script></body></html>
