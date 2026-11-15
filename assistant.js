@@ -1,14 +1,16 @@
 // Shared AI interface; the original guided assistant below remains the offline path.
 (() => {
   const make=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;};
-  const launcher=make('button','✦ Ghinova AI','ai-launcher');launcher.type='button';launcher.setAttribute('aria-controls','ai-dialog');launcher.setAttribute('aria-expanded','false');
+  const launcher=document.getElementById('ghinova-ai-launcher');if(!launcher)return;
+  let original, originalParent, originalNext;
+  try {
   const dialog=make('dialog',null,'ai-dialog');dialog.id='ai-dialog';dialog.setAttribute('aria-labelledby','ai-dialog-title');
   dialog.innerHTML=`<div class="ai-bar"><span class="ai-avatar" aria-hidden="true">✦</span><strong id="ai-dialog-title">Ghinova AI</strong><div><button type="button" id="ai-clear">Clear</button><button type="button" id="ai-close" aria-label="Close assistant">✕</button></div></div>
     <div class="ai-tabs"><button type="button" id="ai-tab" aria-pressed="true">AI chat</button><button type="button" id="guide-tab" aria-pressed="false">Offline guide</button><label for="ai-language">Language<select id="ai-language"><option value="en">English</option><option value="fr">Français</option></select></label></div>
     <div id="ai-chat"><p class="ai-note" id="ai-privacy"></p><div id="ai-log" class="ai-log" role="log" aria-live="polite" aria-label="Conversation"></div><div id="ai-starters" class="ai-starters"></div><form class="ai-form" id="ai-form"><label for="ai-question" id="ai-question-label">Your question</label><textarea id="ai-question" maxlength="800" required rows="2"></textarea><button type="submit" id="ai-send">Send</button></form><p class="ai-note" id="ai-status" role="status"></p></div><div id="ai-offline" hidden></div>`;
-  document.body.append(dialog,launcher);
+  document.body.append(dialog);
   const $=id=>document.getElementById(id), lang=$('ai-language');
-  const original=document.querySelector('.assistant-panel');
+  original=document.querySelector('.assistant-panel');originalParent=original?.parentNode;originalNext=original?.nextSibling;
   if(original)$('ai-offline').append(original);
   else {const p=make('p','Explore the original guided recommendations and inquiry builder on the homepage.','ai-note');const a=make('a','Open guided assistant →');a.href='index.html#assistant';$('ai-offline').append(p,a);}
   let history=[],controller=null,requestId=0;
@@ -26,7 +28,7 @@
   function tab(ai){$('ai-chat').hidden=!ai;$('ai-offline').hidden=ai;$('ai-tab').setAttribute('aria-pressed',String(ai));$('guide-tab').setAttribute('aria-pressed',String(!ai));}
   function open(offline=false){if(!dialog.open)dialog.show();launcher.setAttribute('aria-expanded','true');tab(!offline);(offline?$('guide-tab'):$('ai-question')).focus();}
   function close(){dialog.close();launcher.setAttribute('aria-expanded','false');launcher.focus();}
-  launcher.addEventListener('click',()=>dialog.open?close():open());$('ai-close').addEventListener('click',close);dialog.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close();}});
+  $('ai-close').addEventListener('click',close);dialog.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close();}});
   $('ai-clear').addEventListener('click',reset);lang.addEventListener('change',()=>{localize();tab(true);});$('ai-tab').addEventListener('click',()=>tab(true));$('guide-tab').addEventListener('click',()=>tab(false));
   document.querySelectorAll('[data-open-assistant]').forEach(b=>b.addEventListener('click',()=>open()));
   function revealHash(){let target;try{target=document.getElementById(decodeURIComponent(location.hash.slice(1)));}catch{return;}if(!target)return;let p=target.parentElement;while(p){if(p.tagName==='DETAILS')p.open=true;p=p.parentElement;}if(location.hash==='#assistant')open(true);else {if(dialog.open){dialog.close();launcher.setAttribute('aria-expanded','false');}target.scrollIntoView();}}
@@ -47,6 +49,15 @@
     finally{clearTimeout(timer);if(id===requestId){controller=null;$('ai-status').classList.remove('ai-typing');$('ai-log').setAttribute('aria-busy','false');$('ai-send').disabled=false;$('ai-question').focus();scrollChat();}}
   });
   reset();
+  if(typeof dialog.show!=='function')throw new Error('Dialog unsupported');
+  launcher.setAttribute('aria-controls','ai-dialog');launcher.setAttribute('aria-expanded','false');
+  launcher.addEventListener('click',e=>{e.preventDefault();dialog.open?close():open();});
+  } catch {
+    document.getElementById('ai-dialog')?.remove();
+    if(original && originalParent)originalParent.insertBefore(original,originalNext);
+    launcher.removeAttribute('aria-controls');launcher.removeAttribute('aria-expanded');
+    launcher.title='Chat unavailable — open the offline guide';
+  }
 })();
 
 (() => {

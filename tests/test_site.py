@@ -31,10 +31,20 @@ class SiteTests(unittest.TestCase):
     def test_shared_assistant_and_no_public_backend_default(self):
         for name in ('index.html','shop.html'):
             page=Page((ROOT/name).read_text())
-            self.assertEqual(page.scripts.count('assistant.js'),1)
+            self.assertEqual(sum(urlsplit(src).path=='assistant.js' for src in page.scripts),1)
             self.assertEqual(page.scripts.count('assistant-config.js'),1)
         self.assertIn("window.GHINOVA_ASSISTANT_API = '';",(ROOT/'assistant-config.js').read_text())
         self.assertNotIn('MODEL_API_KEY',(ROOT/'assistant.js').read_text())
+    def test_launcher_available_without_javascript(self):
+        for name in ('index.html','shop.html'):
+            text=(ROOT/name).read_text()
+            launcher=re.search(r'<a id="ghinova-ai-launcher"[^>]*>.*?</a>',text)[0]
+            self.assertIn('href="index.html#assistant"',launcher)
+            self.assertIn('position:fixed',launcher)
+            self.assertIn('Ghinova AI',launcher)
+            self.assertEqual(text.count('id="ghinova-ai-launcher"'),1)
+            self.assertIn('visual.css?v=launcher-2',text)
+            self.assertIn('assistant.js?v=launcher-2',text)
     def test_shop_status_and_structured_data(self):
         text=(ROOT/'shop.html').read_text()
         graph=json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',text,re.S)[1])

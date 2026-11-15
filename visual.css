@@ -102,3 +102,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,
 .ai-starters { flex-shrink:0; padding:8px 22px; }.ai-starters button { background:#f0ede7; border:0; padding:10px 14px; }
 #ai-offline { overflow:auto; min-height:0; }
 @media(max-width:600px) { .ai-dialog { inset:8px 8px auto; width:calc(100vw - 16px); height:calc(100dvh - 16px); max-height:calc(100dvh - 16px); border-radius:20px; }.ai-bar { padding:14px; }.ai-log { max-height:none; padding:14px; }.ai-message { padding:12px 14px; }.ai-tabs { padding:8px; }.ai-form { margin:0 8px 4px; }.ai-starters { padding:8px 14px; } }
+
+/* Launcher remains usable even if chat initialization fails. */
+#ghinova-ai-launcher { visibility:visible; opacity:1; min-height:52px; max-width:calc(100vw - 32px); bottom:max(20px,env(safe-area-inset-bottom))!important; }
+.ai-dialog { z-index:10001; }
