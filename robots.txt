@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghinwafakih.github.io/ghinova/sitemap.xml

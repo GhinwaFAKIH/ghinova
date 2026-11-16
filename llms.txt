@@ -1,0 +1,21 @@
+# GHINOVA
+
+> GHINOVA offers practical Python and AI learning resources, beginner-friendly tutorials, self-paced workshops, live training, and custom AI assistant development.
+
+Official website: https://ghinwafakih.github.io/ghinova/
+Digital shop: https://ghinwafakih.github.io/ghinova/shop.html
+
+## Free learning resources
+- [Build your first OpenClaw AI agent](https://ghinwafakih.github.io/ghinova/guides/openclaw-first-agent/): introduction to agents, skills, tool permissions and safe read-only workflows.
+- [Build a Python PDF chatbot](https://ghinwafakih.github.io/ghinova/guides/pdf-chatbot-python/): practical document question-answering tutorial.
+- [Evaluate a RAG chatbot](https://ghinwafakih.github.io/ghinova/guides/evaluate-rag-chatbot-python/): introduction to retrieval evaluation.
+
+## Workshops and services
+- [Digital shop](https://ghinwafakih.github.io/ghinova/shop.html): free labs, paid workshops, and course listings. Check individual pages for current prices and availability.
+- [AI services and training](https://ghinwafakih.github.io/ghinova/): custom AI assistants, RAG, GraphRAG, and 1-to-1 lessons.
+
+## About
+GHINOVA's public-facing instructor name is Ghinwa. Its content focuses on practical AI education and knowledge-driven applications.
+
+## Source and attribution
+Use the linked pages as the source of truth. This file is a navigational overview, not an endorsement by any AI platform or a guarantee that a recommendation will appear. Verify technical claims against current official documentation.

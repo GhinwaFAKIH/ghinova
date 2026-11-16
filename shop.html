@@ -112,6 +112,17 @@ body{background:#fafbff}
 .agent-card .product-status { align-self: flex-start; }
 .agent-card .shop-action { margin-top: auto; }
 @media (max-width: 760px) { .agent-grid { grid-template-columns: 1fr; } }
+
+/* Conversion-focused shop quick-start cards */
+.shop-skip{position:absolute;left:12px;top:-100px;background:#fff;color:#27366f;padding:12px;z-index:20000}.shop-skip:focus{top:12px}
+.shop-quickstart{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0 38px}
+.shop-quickstart-card{display:flex;flex-direction:column;gap:10px;min-width:0;padding:22px;border:1px solid #dfe5f2;border-radius:18px;background:#fff;color:#27366f;text-decoration:none;box-shadow:0 8px 24px #152a480b;transition:transform .15s ease,box-shadow .15s ease}
+.shop-quickstart-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #152a4820}
+.shop-quickstart-card:focus-visible{outline:3px solid #8170eb;outline-offset:3px}
+.shop-quickstart-card strong{font-size:1.12rem;line-height:1.3}.shop-quickstart-card>span:nth-of-type(2){color:#526079;line-height:1.55;flex:1}
+.shop-quickstart-label{font-size:.75rem;letter-spacing:.08em;font-weight:800;color:#5745b3}.shop-quickstart-link{font-weight:800;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.shop-quickstart{grid-template-columns:1fr}.shop-quickstart-card{padding:18px}}
+@media(prefers-reduced-motion:reduce){.shop-quickstart-card{transition:none}.shop-quickstart-card:hover{transform:none}}
 </style>
 <script type="application/ld+json">
 {
@@ -361,10 +372,15 @@ body{background:#fafbff}
 }
 </script>
 <link rel="stylesheet" href="visual.css?v=launcher-2"><script src="assistant-config.js" defer></script></head><body class="shop-page"><header><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><nav aria-label="Main navigation"><a href="index.html#learn">Learn</a><a href="index.html#courses">Courses</a><a href="shop.html" aria-current="page">Digital Shop</a><a href="#ai-agents">AI Agents</a><a href="index.html#book">Book Training</a><a href="index.html#contact">Contact</a></nav></header>
-<main class="shop-wrap"><p><a class="shop-back" href="./">GHINOVA</a> / <span>Digital Shop</span></p><section class="catalog-intro" aria-labelledby="shop-title">
+<a class="shop-skip" href="#shop-title">Skip to shop content</a><main class="shop-wrap"><p><a class="shop-back" href="./">GHINOVA</a> / <span>Digital Shop</span></p><section class="catalog-intro" aria-labelledby="shop-title">
     <span class="shop-label">GHINOVA ACADEMY · DIGITAL SHOP</span>
     <h1 id="shop-title">Learn AI by building.</h1>
   <p>Choose your level, explore existing courses and free labs, or preview upcoming topics. Every free lab includes a worked example, a challenge, and a reference solution.</p>
+  <div class="shop-quickstart" aria-label="Quick ways to get started">
+    <a class="shop-quickstart-card" href="guides/pdf-chatbot-python/"><span class="shop-quickstart-label">FREE TUTORIAL</span><strong>Try a PDF chatbot first</strong><span>Follow a practical Python guide before choosing a paid workshop.</span><span class="shop-quickstart-link">Open free guide →</span></a>
+    <a class="shop-quickstart-card" href="#pdf-chatbot"><span class="shop-quickstart-label">€5 WORKSHOP</span><strong>Build your first PDF chatbot</strong><span>Self-paced practice with Google Colab and no API key required.</span><span class="shop-quickstart-link">See workshop →</span></a>
+    <a class="shop-quickstart-card" href="#beginner"><span class="shop-quickstart-label">EXPLORE BY LEVEL</span><strong>Find the right learning path</strong><span>Compare Beginner, Intermediate, and Advanced resources.</span><span class="shop-quickstart-link">Browse learning levels →</span></a>
+  </div>
 </section>
 <section class="catalog" aria-labelledby="labs-title">
   <h2 class="catalog-title" id="labs-title">Find your next AI project</h2>
@@ -615,4 +631,4 @@ body{background:#fafbff}
     <p><strong>Instagram publishing is not connected or enabled.</strong> Any future publishing workflow will require an authorized Instagram integration and your approval of the final content before publishing. Draft generation alone does not authorize posting.</p>
   </div>
 </section>
-</main><footer><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><p>Learn · Build · Innovate</p><p>© 2026 Ginwa</p></footer><a id="ghinova-ai-launcher" class="ai-launcher" href="index.html#assistant" aria-label="Ghinova AI — open chat or offline guide" style="position:fixed;right:16px;bottom:20px;z-index:10000;display:inline-flex;align-items:center;gap:8px;padding:16px 22px;border:2px solid white;border-radius:999px;background:#27366f;color:white;font:700 16px system-ui,sans-serif;text-decoration:none;box-shadow:0 6px 24px #17233b55">✦ Ghinova AI</a><script src="assistant.js?v=launcher-2"></script></body></html>
+</main><footer><a class="brand" href="index.html"><span>✦</span> GHIN<span>OVA</span></a><p>Learn · Build · Innovate</p><p>© 2026 Ghinwa</p></footer><a id="ghinova-ai-launcher" class="ai-launcher" href="index.html#assistant" aria-label="Ghinova AI — open chat or offline guide" style="position:fixed;right:16px;bottom:20px;z-index:10000;display:inline-flex;align-items:center;gap:8px;padding:16px 22px;border:2px solid white;border-radius:999px;background:#27366f;color:white;font:700 16px system-ui,sans-serif;text-decoration:none;box-shadow:0 6px 24px #17233b55">✦ Ghinova AI</a><script src="assistant.js?v=launcher-2"></script></body></html>
