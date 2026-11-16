@@ -106,3 +106,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,
 /* Launcher remains usable even if chat initialization fails. */
 #ghinova-ai-launcher { visibility:visible; opacity:1; min-height:52px; max-width:calc(100vw - 32px); bottom:max(20px,env(safe-area-inset-bottom))!important; }
 .ai-dialog { z-index:10001; }
+
+
+/* GHINOVA brand palette — color-only refresh (2026-11-16). */
+:root {
+  --navy:#111A3A;
+  --pink:#F64C9B;
+  --yellow:#FFD65A;
+  --paper:#FFF8F3;
+  --muted:#66718B;
+  --accent:#9655F4;
+}
+body,.shop-page { background-color:var(--paper); color:var(--navy); }
+.hero { background:linear-gradient(115deg,#FFE5EB 0%,#FFF8F3 53%,#FFF2D8 100%); }
+.hero h1 em,.hero h1 .gradient-text,.gradient-text {
+  background:linear-gradient(100deg,#F64C9B,#9655F4);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.eyebrow,.section-head span { color:#BC2D72; }
+.blob { background:linear-gradient(135deg,#FFD65A,#F64C9B); }
+.about { background:#111A3A; }
+.contact { background:#FFE5EB; }
+.freelance,.ai-bar,.ai-tabs button { background:#FFF0F8; }
+.ai-message.user { background:#FBE0F0; }
+.ai-launcher,.ai-tabs button[aria-pressed="true"] { background:#111A3A; }
+.more-details > summary { color:#9655F4; }
+a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,textarea:focus-visible { outline-color:#9655F4; }
